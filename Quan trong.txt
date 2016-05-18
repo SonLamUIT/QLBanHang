@@ -1,0 +1,19 @@
+1. Nhap du lieu bang MATHANG. Trong do du lieu bang DVT da duoc nhap trong SQL.
+2. Nhap bang DOITAC. Trong SQL da co LOAIDOITAC (NCC, KH)
+	
+3. Tao form DON DAT HANG tu bang DDH_NCC, CT_DDH_NCC. Bao gom cac thuoc tinh cua 2 bang. Khon kheo ma lua chon. :v
+4. Tao form PHIEU NHAP HANG tu bang PHIEUNHAPHANG va CT_PNH. Bao gom cac thuoc tinh cua 2 bang. Khon kheo ma lua chon. :v
+	Trong do PhieuNHapHang(TongTien) = tong ThanhTien cua SoPNH do trong bang CT_PNH
+	TRong do DoiTAc(SoTienNo) = Tong PHIEUNHAPHANG(ConLai) theo MaDoiTac
+5. Lap PHIEUTHUCHI. Tu bang PHIEUTHUCHI
+
+-- Ban le
+6. Nhap HOADONBANLE va CT_HDBL
+7. Nhap DONDATHANG_KH va CT_DDH_KH
+8. Nhap PhieuGiaoHANG va CT_PGH
+	(Quay lai buoc 5 de nhap PhieuThuTienNo cua Khach Hang)
+9. Lap bao cao doanh thu
+10. Lap bao cao so luong ton.
+11. Lap bao cao cong no.
+//3 bao cao kho vl
+//Du lieu nhap san tat ca cac bang. nen cac form lay du lieu tu sql (ko lien quan nhau)
