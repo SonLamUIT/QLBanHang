@@ -8,7 +8,6 @@ D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\bin\De
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\bin\Debug\DTO.pdb
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.Properties.Resources.resources
-D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.Them_MatHang.resources
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.exe
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.pdb
@@ -16,3 +15,4 @@ D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\De
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\bin\Debug\MetroFramework.Design.dll
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\bin\Debug\MetroFramework.dll
 D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\bin\Debug\MetroFramework.Fonts.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\UI\obj\Debug\UI.fr_MatHang.resources
