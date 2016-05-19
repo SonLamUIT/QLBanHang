@@ -38,6 +38,10 @@
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.dtgrid_mathang = new System.Windows.Forms.DataGridView();
+            this.tbx_Sdt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbx_DiaChi = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrid_mathang)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +70,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbx_DiaChi);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tbx_Sdt);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbx_LoaiDoiTac);
             this.groupBox1.Controls.Add(this.tbx_TenDoiTac);
             this.groupBox1.Controls.Add(this.label3);
@@ -150,6 +158,46 @@
             this.dtgrid_mathang.Size = new System.Drawing.Size(667, 185);
             this.dtgrid_mathang.TabIndex = 17;
             // 
+            // tbx_Sdt
+            // 
+            this.tbx_Sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_Sdt.Location = new System.Drawing.Point(459, 40);
+            this.tbx_Sdt.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_Sdt.Name = "tbx_Sdt";
+            this.tbx_Sdt.Size = new System.Drawing.Size(148, 23);
+            this.tbx_Sdt.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(323, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 17);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "SDT";
+            // 
+            // tbx_DiaChi
+            // 
+            this.tbx_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbx_DiaChi.Location = new System.Drawing.Point(459, 93);
+            this.tbx_DiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_DiaChi.Name = "tbx_DiaChi";
+            this.tbx_DiaChi.Size = new System.Drawing.Size(148, 23);
+            this.tbx_DiaChi.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(323, 97);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Địa Chỉ";
+            // 
             // frm_DoiTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,5 +231,9 @@
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.DataGridView dtgrid_mathang;
+        private System.Windows.Forms.TextBox tbx_DiaChi;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbx_Sdt;
+        private System.Windows.Forms.Label label1;
     }
 }

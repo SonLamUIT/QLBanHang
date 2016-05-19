@@ -7,10 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using MetroFramework.Forms;
+using DAO;
 
 namespace UI
 {
-    public partial class frm_DoiTac : Form
+    public partial class frm_DoiTac : MetroForm
     {
         public frm_DoiTac()
         {

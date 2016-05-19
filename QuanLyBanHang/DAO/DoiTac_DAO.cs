@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    class DoiTac_DAO
+    public class DoiTac_DAO: DBConnection
     {
+
     }
 }
