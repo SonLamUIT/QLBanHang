@@ -10,15 +10,12 @@ namespace DTO
     {
         public string MaMatHang { get; set; }
         public string TenMatHang { get; set; }
-        public double DonGiaNhap { get; set; }
         public int SoLuongTon { get; set; }
         public string MaDVT { get; set; }
         public MatHang() { }
-        public MatHang(string Ma, string ten, double dongia, int sl, string madvt)
-        {
-            MaMatHang = Ma;
+        public MatHang(string ten, int sl, string madvt)
+        {         
             TenMatHang = ten;
-            DonGiaNhap = dongia;
             SoLuongTon = sl;
             MaDVT = madvt;
         }

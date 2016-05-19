@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Form1 : Form
+    public partial class Frm_MatHang : Form
     {
-        public Form1()
+        public Frm_MatHang()
         {
             InitializeComponent();
         }

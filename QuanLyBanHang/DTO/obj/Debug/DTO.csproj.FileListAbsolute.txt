@@ -1,0 +1,5 @@
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DTO\bin\Debug\DTO.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DTO\bin\Debug\DTO.pdb
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DTO\obj\Debug\DTO.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DTO\obj\Debug\DTO.pdb

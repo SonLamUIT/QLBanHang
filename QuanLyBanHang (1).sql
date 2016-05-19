@@ -1,4 +1,4 @@
-CREATE DATABASE	QuanLyBanHang
+﻿CREATE DATABASE	QuanLyBanHang
 USE QuanLyBanHang
 
 CREATE TABLE LOAIDOITAC
@@ -203,3 +203,23 @@ CREATE TABLE THAMSO
 SET DATEFORMAT DMY
 --USE master
 --DROP DATABASE QuanLyBanHang
+
+Go
+CREATE proc prc_InsertMatHang(@TenMatHang nvarchar(50),@SoLuongTon int, @MaDVT nvarchar(10))
+AS
+BEGIN
+    DECLARE @COUNT AS INT
+    SELECT @COUNT = (SELECT COUNT(*) FROM MATHANG) + 1
+    BEGIN
+        INSERT INTO dbo.MATHANG(MaMatHang,TenMatHang,SoLuongTon, MaDVT)
+        VALUES ('MH'+CAST(@COUNT AS VARCHAR(10)),@TenMatHang,@SoLuongTon, @MaDVT)
+    END
+END
+ 
+-- prc_InsertMatHang N'Nguyễn Văn', N'Nam'
+ 
+-- SELECT * FROM NhanVien
+
+prc_InsertMatHang N'Chip Intel', 15, 'DVT01'
+select* from MATHANG
+select MaDVT from DVT where TenDVT = N'Cái'

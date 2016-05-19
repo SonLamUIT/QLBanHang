@@ -1,0 +1,7 @@
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\bin\Debug\DAO.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\bin\Debug\DAO.pdb
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\bin\Debug\DTO.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\bin\Debug\DTO.pdb
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\obj\Debug\DAO.dll
+D:\Hoc Ki VI\Phan tich thiet ke he thong\Do An\QLBanHang\QuanLyBanHang\DAO\obj\Debug\DAO.pdb
