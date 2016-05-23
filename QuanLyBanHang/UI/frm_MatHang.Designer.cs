@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class fr_MatHang
+    partial class frm_MatHang
     {
         /// <summary>
         /// Required designer variable.

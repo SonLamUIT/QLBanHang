@@ -12,11 +12,11 @@ using MetroFramework.Forms;
 using DAO;
 namespace UI
 {
-    public partial class fr_MatHang : MetroForm
+    public partial class frm_MatHang : MetroForm
     {
         
   
-        public fr_MatHang()
+        public frm_MatHang()
         {
             InitializeComponent();
         }
@@ -72,6 +72,7 @@ namespace UI
             dtgrid_mathang.DataSource = obj_MatHang_DAO.Lay_Tat_Ca_Mat_Hang();
             //button tim kiem
             btn_TimKiem.Enabled = false;
+            dtgrid_mathang.ReadOnly = true;
         }
 
         private void dtgrid_mathang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -89,7 +90,7 @@ namespace UI
                 btn_TimKiem.Enabled = true;
                 cbx_dvt.Enabled = false;
                 btn_them.Enabled = false;
-                dtgrid_mathang.Enabled = false;
+                dtgrid_mathang.ReadOnly = true;
                 
             }
             else

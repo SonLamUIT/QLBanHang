@@ -203,7 +203,8 @@ CREATE TABLE THAMSO
 SET DATEFORMAT DMY
 --USE master
 --DROP DATABASE QuanLyBanHang
-
+----------------------------------------Stored Procedure-------------------------------------
+--Them mat hang
 Go
 CREATE proc prc_InsertMatHang(@TenMatHang nvarchar(50),@SoLuongTon int, @MaDVT nvarchar(10))
 AS
@@ -216,10 +217,70 @@ BEGIN
     END
 END
  
+--Them doi tac
+Go
+CREATE proc prc_InsertDoiTac(@TenDoiTac nvarchar(50),@MaLoaiDoiTac nvarchar(10), @SDT varchar(11), @DiaChi nvarchar(50), @SoTienNo money)
+AS
+BEGIN
+    DECLARE @COUNT AS INT
+    SELECT @COUNT = (SELECT COUNT(*) FROM DOITAC) + 1
+    BEGIN
+        INSERT INTO dbo.DOITAC(MaDoiTac,TenDoiTac, MaLoaiDoiTac,SDT, DiaChi, SoTienNo)
+        VALUES ('DT'+CAST(@COUNT AS VARCHAR(10)),@TenDoiTac,@MaLoaiDoiTac, @SDT, @DiaChi, @SoTienNo)
+    END
+END
+--Tra cuu doi tac
+Go
+create proc prc_SearchDoiTac
+@TenDoiTac nvarchar(50) = '', 
+@TenLoai nvarchar(50)= '', 
+@SDT varchar(11)='', 
+@DiaChi nvarchar(50)= ''
+AS
+BEGIN
+	select distinct MaDoiTac[Mã đối tác], TenDoiTac[Tên đối tác], d.MaLoaiDoiTac[Mã loại đối tác], SDT,DiaChi[Địa chỉ], SoTienNo[Số tiền nợ], TenLoai[Tên loại] 
+	from DOITAC d,LOAIDOITAC ldt 
+	where  ((@TenDoiTac like (N'%' + d.TenDoiTac + N'%') or @TenDoiTac = '') AND (@TenLoai like N'%' + ldt.TenLoai + N'%' or @TenLoai = '') AND (@SDT in ('', d.SDT)) AND (@DiaChi like (N'%' + d.DiaChi + N'%') or @DiaChi = '')) AND (d.MaLoaiDoiTac = ldt.MaLoaiDoiTac)
+END
+--Cap nhat thong tin doi tac
+Go
+create proc prc_UpdateDoiTac
+@TenDoiTac		nvarchar(50),
+@MaLoaiDoiTac	nvarchar(10),
+@SDT			varchar(11),
+@DiaChi			nvarchar(50),
+@MaDoiTac		nvarchar(10)
+AS
+BEGIN
+	UPDATE DOITAC
+	SET 
+		TenDoiTac = @TenDoiTac,
+		MaLoaiDoiTac = @MaLoaiDoiTac,
+		SDT = @SDT,
+		DiaChi = @DiaChi
+	WHERE
+		MaDoiTac = @MaDoiTac
+END
+--EXEC prc_UpdateDoiTac N'SLam', N'LDT02', '111', N'TPHCM', N'DT3'
+--select * from DOITAC
+--prc_SearchDoiTac 'Nguyễn Văn BANh', '', '', ''
+--prc_SearchDoiTac '','','',''
+--exec prc_SearchDoiTac N'Nguyễn', '','',''
+--delete from DOITAC where MaDoiTac='DT6'
+--prc_InsertDoiTac N'Nguyễn Văn', 'NCC', 0909009, N'Tiền Giang',0
+
 -- prc_InsertMatHang N'Nguyễn Văn', N'Nam'
  
 -- SELECT * FROM NhanVien
 
-prc_InsertMatHang N'Chip Intel', 15, 'DVT01'
-select* from MATHANG
-select MaDVT from DVT where TenDVT = N'Cái'
+--prc_InsertMatHang N'Chip Intel', 15, 'DVT01'
+--exec prc_InsertMatHang N'T', 3, 'DVT01'
+--select* from MATHANG
+--select MaDVT from DVT where TenDVT = N'Cái'
+--select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT
+--select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT and TenMatHang = 'Chip'
+--DELETE FROM MATHANG WHERE TenMatHang = 'Chip'
+--update LOAIDOITAC set MaLoaiDoiTac = 'LDT01' where TenLoai = N'Khách hàng'
+--update LOAIDOITAC set MaLoaiDoiTac = 'LDT02' where TenLoai = N'Nhà cung cấp'
+--update DOITAC set MaLoaiDoiTac = 'LDT02' where MaDoiTac = N'DT1'
+--select distinct MaDoiTac[Mã đối tác], TenDoiTac[Tên đối tác], d.MaLoaiDoiTac[Mã loại đối tác], SDT,DiaChi[Địa chỉ], SoTienNo[Số tiền nợ], TenLoai[Tên loại] from DOITAC d,LOAIDOITAC ldt where d.MaLoaiDoiTac = ldt.MaLoaiDoiTac
