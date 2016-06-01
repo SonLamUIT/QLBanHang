@@ -9,9 +9,7 @@ namespace DAO
 {
     public class DBConnection
     {
-        public static SqlConnection conn = new SqlConnection(@"Data Source=SONLAM;Initial Catalog=QuanLyBanHang;MultipleActiveResultSets = true;Integrated Security=True");
-        
-        
+        public static SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=QuanLyBanHang;Integrated Security=True");
         public string LayDuLieu_String(string function, string thamso, string ketqua)
         {
             try
@@ -42,8 +40,8 @@ namespace DAO
                     conn.Open();
                 }
                 SqlCommand cmd = new SqlCommand(function, conn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);                
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
@@ -64,8 +62,8 @@ namespace DAO
                     conn.Open();
                 }
                 SqlCommand cmd = new SqlCommand(string.Format(function,thamso), conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
@@ -96,7 +94,27 @@ namespace DAO
                 return false;
             }
         }
-        
-        
+        public bool KiemTraDuLieuTonTai_1ThamSo(string proc, string var)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(String.Format(proc,var), conn);
+                cmd.ExecuteReader();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt != null) return true;                               
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }  
+            return false;         
+        }
     }
 }
