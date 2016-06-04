@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage8 = new MetroFramework.Controls.MetroTabPage();
             this.btThemPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.btXoa = new MetroFramework.Controls.MetroButton();
-            this.btSua = new MetroFramework.Controls.MetroButton();
+            this.btSuaPNH = new MetroFramework.Controls.MetroButton();
             this.btCapNhatDanhSachPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.dgvDanhSachPhieuNhapHang = new System.Windows.Forms.DataGridView();
             this.metroTabPage9 = new MetroFramework.Controls.MetroTabPage();
             this.btThemChiTietPhieuNhapHang = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btSuaCTPNH = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.btCapNhatDanhSachChiTietPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.dgvDanhSachChiTietPhieuNhapHang = new System.Windows.Forms.DataGridView();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
@@ -58,6 +61,7 @@
             this.metroTabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietPhieuNhapHang)).BeginInit();
             this.metroTabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +71,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(965, 480);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -93,7 +97,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage9);
             this.metroTabControl2.Location = new System.Drawing.Point(3, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 1;
+            this.metroTabControl2.SelectedIndex = 0;
             this.metroTabControl2.Size = new System.Drawing.Size(958, 439);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -102,7 +106,7 @@
             // 
             this.metroTabPage8.Controls.Add(this.btThemPhieuNhapHang);
             this.metroTabPage8.Controls.Add(this.btXoa);
-            this.metroTabPage8.Controls.Add(this.btSua);
+            this.metroTabPage8.Controls.Add(this.btSuaPNH);
             this.metroTabPage8.Controls.Add(this.btCapNhatDanhSachPhieuNhapHang);
             this.metroTabPage8.Controls.Add(this.dgvDanhSachPhieuNhapHang);
             this.metroTabPage8.HorizontalScrollbarBarColor = true;
@@ -136,14 +140,15 @@
             this.btXoa.Text = "Xóa";
             this.btXoa.UseSelectable = true;
             // 
-            // btSua
+            // btSuaPNH
             // 
-            this.btSua.Location = new System.Drawing.Point(758, 120);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(189, 33);
-            this.btSua.TabIndex = 7;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseSelectable = true;
+            this.btSuaPNH.Location = new System.Drawing.Point(758, 120);
+            this.btSuaPNH.Name = "btSuaPNH";
+            this.btSuaPNH.Size = new System.Drawing.Size(189, 33);
+            this.btSuaPNH.TabIndex = 7;
+            this.btSuaPNH.Text = "Sửa";
+            this.btSuaPNH.UseSelectable = true;
+            this.btSuaPNH.Click += new System.EventHandler(this.btSuaPNH_Click);
             // 
             // btCapNhatDanhSachPhieuNhapHang
             // 
@@ -166,7 +171,7 @@
             // metroTabPage9
             // 
             this.metroTabPage9.Controls.Add(this.btThemChiTietPhieuNhapHang);
-            this.metroTabPage9.Controls.Add(this.metroButton1);
+            this.metroTabPage9.Controls.Add(this.btSuaCTPNH);
             this.metroTabPage9.Controls.Add(this.metroButton2);
             this.metroTabPage9.Controls.Add(this.btCapNhatDanhSachChiTietPhieuNhapHang);
             this.metroTabPage9.Controls.Add(this.dgvDanhSachChiTietPhieuNhapHang);
@@ -192,14 +197,15 @@
             this.btThemChiTietPhieuNhapHang.UseSelectable = true;
             this.btThemChiTietPhieuNhapHang.Click += new System.EventHandler(this.btThemChiTietPhieuNhapHang_Click);
             // 
-            // metroButton1
+            // btSuaCTPNH
             // 
-            this.metroButton1.Location = new System.Drawing.Point(758, 81);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(189, 33);
-            this.metroButton1.TabIndex = 8;
-            this.metroButton1.Text = "Sửa";
-            this.metroButton1.UseSelectable = true;
+            this.btSuaCTPNH.Location = new System.Drawing.Point(758, 81);
+            this.btSuaCTPNH.Name = "btSuaCTPNH";
+            this.btSuaCTPNH.Size = new System.Drawing.Size(189, 33);
+            this.btSuaCTPNH.TabIndex = 8;
+            this.btSuaCTPNH.Text = "Sửa";
+            this.btSuaCTPNH.UseSelectable = true;
+            this.btSuaCTPNH.Click += new System.EventHandler(this.btSuaCTPNH_Click);
             // 
             // metroButton2
             // 
@@ -230,6 +236,8 @@
             // 
             // metroTabPage7
             // 
+            this.metroTabPage7.Controls.Add(this.metroLabel5);
+            this.metroTabPage7.Controls.Add(this.pictureBox2);
             this.metroTabPage7.Controls.Add(this.label1);
             this.metroTabPage7.Controls.Add(this.metroLabel4);
             this.metroTabPage7.Controls.Add(this.metroLabel3);
@@ -248,13 +256,25 @@
             this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.VerticalScrollbarSize = 10;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackgroundImage = global::UI.Properties.Resources.sales_icon_large;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(408, 64);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(133, 130);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 41);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(371, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 78);
+            this.label1.Size = new System.Drawing.Size(203, 40);
             this.label1.TabIndex = 5;
             this.label1.Text = "Sales Manager";
             // 
@@ -270,7 +290,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(336, 207);
+            this.metroLabel3.Location = new System.Drawing.Point(336, 248);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(303, 38);
             this.metroLabel3.TabIndex = 4;
@@ -279,7 +299,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(378, 188);
+            this.metroLabel2.Location = new System.Drawing.Point(378, 229);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(203, 19);
             this.metroLabel2.TabIndex = 4;
@@ -288,7 +308,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(419, 135);
+            this.metroLabel1.Location = new System.Drawing.Point(419, 210);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(112, 19);
             this.metroLabel1.TabIndex = 3;
@@ -296,6 +316,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.blue_sky;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(336, 335);
@@ -304,12 +325,23 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(419, 42);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(117, 19);
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "Quản Lý Bán Hàng";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 566);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
             this.Style = MetroFramework.MetroColorStyle.Default;
@@ -324,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietPhieuNhapHang)).EndInit();
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -338,7 +371,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage9;
         private MetroFramework.Controls.MetroButton btThemPhieuNhapHang;
         private MetroFramework.Controls.MetroButton btXoa;
-        private MetroFramework.Controls.MetroButton btSua;
+        private MetroFramework.Controls.MetroButton btSuaPNH;
         private MetroFramework.Controls.MetroButton btCapNhatDanhSachPhieuNhapHang;
         private System.Windows.Forms.DataGridView dgvDanhSachPhieuNhapHang;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -348,9 +381,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton btThemChiTietPhieuNhapHang;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btSuaCTPNH;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton btCapNhatDanhSachChiTietPhieuNhapHang;
         private System.Windows.Forms.DataGridView dgvDanhSachChiTietPhieuNhapHang;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

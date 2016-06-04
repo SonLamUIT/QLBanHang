@@ -12,13 +12,13 @@ namespace DTO
         public string MaMatHang { get; set; }
         public int SoLuongChuaNhap { get; set; }
         public int SoLuongNhap { get; set; }
-        public double DonGiaNhap { get; set; }
-        public double ThanhTien { get; set; }
+        public UInt64 DonGiaNhap { get; set; }
+        public UInt64 ThanhTien { get; set; }
         public CT_PNH()
         {
 
         }
-        public CT_PNH(string so, string ma, int soluongchuanhap, int soluongnhap, double dongia, double thanhtien)
+        public CT_PNH(string so, string ma, int soluongchuanhap, int soluongnhap, UInt64 dongia, UInt64 thanhtien)
         {
             SoPNH = so;
             MaMatHang = ma;

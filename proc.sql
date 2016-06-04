@@ -12,12 +12,18 @@ end
 --exec LayDSDonDatHangNCC
 
 --proc LayDanhSachPhieuNhapHang
-go 
-create proc LayDanhSachPhieuNhapHang
+USE [QuanLyBanHang]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[LayDanhSachPhieuNhapHang]
 as
 begin
-select * 
+select SoPNH [Số Phiếu Nhập Hàng], SoDDH_NCC [Số Đơn Đặt Hàng Nhà Cung Cấp], NgayNhap [Ngày Nhập], TongTien [Tổng Tiền], ThanhToan [Thanh Toán], ConLai [Còn Lại] 
 from PHIEUNHAPHANG
+ORDER BY SoPNH ASC
 end
 
 exec LayDanhSachPhieuNhapHang 
@@ -29,19 +35,23 @@ as
 begin
 select *
 from CT_PNH
+ORDER BY SoPNH ASC
 end
 
 --exec LayDanhSachChiTietPhieuNhapHang
-go 
-create proc KiemTraSoPhieuNhapHangTrongPhieuNhapHang
-@ma nvarchar(10)
-as 
+USE [QuanLyBanHang]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[LayDanhSachChiTietPhieuNhapHang]
+as
 begin
-select SoPNH
-from PHIEUNHAPHANG
-where @ma=SoPNH
+select SoPNH [Số Phiếu Nhập Hàng], MaMatHang [Mã Mặt Hàng], SoLuongChuaNhap [Số Lượng Chưa Nhập], SoLuongNhap [Số Lượng Nhập], DonGiaNhap [Đơn Giá Nhập], ThanhTien [Thành Tiền]
+from CT_PNH
+ORDER BY SoPNH ASC
 end
-
 --exec KiemTraSoPhieuNhapHangTrongPhieuNhapHang '0'
 
 --proc nhap du lieu vao phieu nhap hang
@@ -58,7 +68,7 @@ begin
 insert into dbo.PHIEUNHAPHANG values (@SoPhieuNhapHang,@SoDonDatHangNhaCungCap,@NgayNhap,@TongTien,@ThanhToan,@ConLai)
 end
  
-exec NhapPhieuNhapHang 'A005','AAA006',27-05-2016,0,0,0
+exec NhapPhieuNhapHang 'A005','AAA006','27-05-2016',0,0,0
 
 
 insert into MATHANG values('AAAA0003','iphone6s')
@@ -137,4 +147,18 @@ insert into dbo.MATHANG values ('AAAA0006','Samsung Galaxy S6',75,'C')
 insert into dbo.MATHANG values ('AAAA0007','Samsung Galaxy S6 edge',101,'C')
 insert into dbo.MATHANG values ('AAAA0008','LG G5',8,'C')
 
-select SoPNH from dbo.PHIEUNHAPHANG ORDER BY SoPNH ASC
+--proc NhapChiTietPhieuNhapHang 
+go
+create proc NhapChiTietPhieuNhapHang 
+@SoPNH nvarchar(10),
+@MaMatHang nvarchar(10),
+@SoLuongChuaNhap int,
+@SoLuongNhap int,
+@DonGiaNhap money,
+@ThanhTien money
+as 
+begin
+	insert into dbo.CT_PNH values (@SoPNH,@MaMatHang,@SoLuongChuaNhap,@SoLuongNhap,@DonGiaNhap,@ThanhTien)
+end
+
+exec NhapChiTietPhieuNhapHang 'A001','AAAA0002',45,37,

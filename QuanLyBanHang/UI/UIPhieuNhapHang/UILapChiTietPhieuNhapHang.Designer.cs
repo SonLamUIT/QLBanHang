@@ -37,10 +37,11 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.tbSoLuongNhap = new MetroFramework.Controls.MetroTextBox();
+            this.tbDonGiaNhap = new MetroFramework.Controls.MetroTextBox();
+            this.tbThanhTien = new MetroFramework.Controls.MetroTextBox();
             this.btLuu = new MetroFramework.Controls.MetroButton();
+            this.btDanhSachMatHang = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -126,66 +127,80 @@
             this.metroLabel6.TabIndex = 5;
             this.metroLabel6.Text = "Thành Tiền";
             // 
-            // metroTextBox1
+            // tbSoLuongNhap
             // 
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(188, 146);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(315, 23);
-            this.metroTextBox1.TabIndex = 4;
-            this.metroTextBox1.UseSelectable = true;
+            this.tbSoLuongNhap.Lines = new string[0];
+            this.tbSoLuongNhap.Location = new System.Drawing.Point(188, 146);
+            this.tbSoLuongNhap.MaxLength = 32767;
+            this.tbSoLuongNhap.Name = "tbSoLuongNhap";
+            this.tbSoLuongNhap.PasswordChar = '\0';
+            this.tbSoLuongNhap.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSoLuongNhap.SelectedText = "";
+            this.tbSoLuongNhap.Size = new System.Drawing.Size(315, 23);
+            this.tbSoLuongNhap.TabIndex = 4;
+            this.tbSoLuongNhap.UseSelectable = true;
+            this.tbSoLuongNhap.TextChanged += new System.EventHandler(this.tbSoLuongNhap_TextChanged);
             // 
-            // metroTextBox2
+            // tbDonGiaNhap
             // 
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(188, 175);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.Size = new System.Drawing.Size(315, 23);
-            this.metroTextBox2.TabIndex = 4;
-            this.metroTextBox2.UseSelectable = true;
+            this.tbDonGiaNhap.Lines = new string[0];
+            this.tbDonGiaNhap.Location = new System.Drawing.Point(188, 175);
+            this.tbDonGiaNhap.MaxLength = 32767;
+            this.tbDonGiaNhap.Name = "tbDonGiaNhap";
+            this.tbDonGiaNhap.PasswordChar = '\0';
+            this.tbDonGiaNhap.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbDonGiaNhap.SelectedText = "";
+            this.tbDonGiaNhap.Size = new System.Drawing.Size(315, 23);
+            this.tbDonGiaNhap.TabIndex = 4;
+            this.tbDonGiaNhap.UseSelectable = true;
+            this.tbDonGiaNhap.TextChanged += new System.EventHandler(this.tbDonGiaNhap_TextChanged);
             // 
-            // metroTextBox3
+            // tbThanhTien
             // 
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(188, 204);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.Size = new System.Drawing.Size(315, 23);
-            this.metroTextBox3.TabIndex = 4;
-            this.metroTextBox3.UseSelectable = true;
+            this.tbThanhTien.Lines = new string[0];
+            this.tbThanhTien.Location = new System.Drawing.Point(188, 204);
+            this.tbThanhTien.MaxLength = 32767;
+            this.tbThanhTien.Name = "tbThanhTien";
+            this.tbThanhTien.PasswordChar = '\0';
+            this.tbThanhTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbThanhTien.SelectedText = "";
+            this.tbThanhTien.Size = new System.Drawing.Size(315, 23);
+            this.tbThanhTien.TabIndex = 4;
+            this.tbThanhTien.UseSelectable = true;
             // 
             // btLuu
             // 
-            this.btLuu.Location = new System.Drawing.Point(435, 251);
+            this.btLuu.Location = new System.Drawing.Point(435, 233);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(75, 23);
             this.btLuu.TabIndex = 6;
             this.btLuu.Text = "Lưu";
             this.btLuu.UseSelectable = true;
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
+            // 
+            // btDanhSachMatHang
+            // 
+            this.btDanhSachMatHang.Location = new System.Drawing.Point(331, 88);
+            this.btDanhSachMatHang.Name = "btDanhSachMatHang";
+            this.btDanhSachMatHang.Size = new System.Drawing.Size(153, 23);
+            this.btDanhSachMatHang.TabIndex = 7;
+            this.btDanhSachMatHang.Text = "Danh Sách Mặt Hàng";
+            this.btDanhSachMatHang.UseSelectable = true;
+            this.btDanhSachMatHang.Click += new System.EventHandler(this.btDanhSachMatHang_Click);
             // 
             // UILapChiTietPhieuNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 297);
+            this.ClientSize = new System.Drawing.Size(533, 281);
+            this.Controls.Add(this.btDanhSachMatHang);
             this.Controls.Add(this.btLuu);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.tbThanhTien);
+            this.Controls.Add(this.tbDonGiaNhap);
+            this.Controls.Add(this.tbSoLuongNhap);
             this.Controls.Add(this.tbSoLuongChuaNhap);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -212,9 +227,10 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox tbSoLuongNhap;
+        private MetroFramework.Controls.MetroTextBox tbDonGiaNhap;
+        private MetroFramework.Controls.MetroTextBox tbThanhTien;
         private MetroFramework.Controls.MetroButton btLuu;
+        private MetroFramework.Controls.MetroButton btDanhSachMatHang;
     }
 }

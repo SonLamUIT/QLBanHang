@@ -22,10 +22,10 @@ namespace DAO
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.PHIEUNHAPHANG values ({0},{1},{2},{3},{4},{5})", pnh.SoPNH,pnh.SoDDH_NCC,pnh.NgayNhap,pnh.TongTien,pnh.ThanhToan,pnh.ConLai),conn);
+                SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.PHIEUNHAPHANG values ('{0}','{1}','{2}',{3},{4},{5})", pnh.SoPNH,pnh.SoDDH_NCC,pnh.NgayNhap,pnh.TongTien,pnh.ThanhToan,pnh.ConLai),conn);
                 cmd.ExecuteNonQuery();
-                SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.PHIEUNHAPHANG where SoPNH= {0}", pnh.SoPNH), conn);
-                cmd.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.PHIEUNHAPHANG where SoPNH= '{0}'", pnh.SoPNH), conn);
+                cmd1.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd1);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -41,8 +41,7 @@ namespace DAO
         public DataTable LayDanhSachDonDatHangNCC()
         {            
             try
-            {
-                
+            {                
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
@@ -106,6 +105,54 @@ namespace DAO
                 conn.Close();
             }
             return null;
+        }
+        public bool ThayDoiPhieuNhapHang(string SoPhieuNhapHang1,string SoPhieuNhapHang2, string SoDonDatHangNhaCungCap, string NgayNhap, UInt64 TongTien, UInt64 ThanhToan, UInt64 ConLai)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("UPDATE dbo.PHIEUNHAPHANG SET SoPNH ='{0}', SoDDH_NCC='{1}', NgayNhap='{2}', TongTien={3}, ThanhToan={4}, ConLai={5}  WHERE SoPNH='{6}'", SoPhieuNhapHang2, SoDonDatHangNhaCungCap, NgayNhap, TongTien, ThanhToan, ConLai, SoPhieuNhapHang1), conn);
+                cmd.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.PHIEUNHAPHANG where SoPNH= '{0}'", SoPhieuNhapHang2), conn);
+                cmd1.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt != null) return true;
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool LapChiTietPhieuNhapHang(CT_PNH ctpnh)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.CT_PNH values ('{0}','{1}',{2},{3},{4},{5})", ctpnh.SoPNH,ctpnh.MaMatHang,ctpnh.SoLuongChuaNhap,ctpnh.SoLuongNhap,ctpnh.DonGiaNhap,ctpnh.ThanhTien), conn);
+                cmd.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.CT_PNH where SoPNH= '{0}'", ctpnh.SoPNH), conn);
+                cmd1.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt != null) return true;
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return false;
         }
     }
 

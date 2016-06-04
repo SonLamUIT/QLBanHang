@@ -10,7 +10,7 @@ namespace DTO
     {
         public string SoPNH { get; set; }
         public string SoDDH_NCC { get; set; }
-        public DateTime NgayNhap { get; set; }
+        public string NgayNhap { get; set; }
         public UInt64 TongTien { get; set; }
         public UInt64 ThanhToan { get; set; }
         public UInt64 ConLai { get; set; }
@@ -18,7 +18,7 @@ namespace DTO
         {
 
         }
-        public PhieuNhapHang(string sopnh, string sddh, DateTime ngay, UInt64 tong, UInt64 thanhtoan, UInt64 conlai)
+        public PhieuNhapHang(string sopnh, string sddh, string ngay, UInt64 tong, UInt64 thanhtoan, UInt64 conlai)
         {
             SoPNH = sopnh;
             SoDDH_NCC = sddh;

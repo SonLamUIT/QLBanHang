@@ -67,6 +67,12 @@
     <Compile Include="UIPhieuNhapHang\UIChiTietPhieuNhapHang.Designer.cs">
       <DependentUpon>UIChiTietPhieuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIPhieuNhapHang\UIDanhSachMatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\UIDanhSachMatHang.Designer.cs">
+      <DependentUpon>UIDanhSachMatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIPhieuNhapHang\UILapChiTietPhieuNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="UIPhieuNhapHang\UILapPhieuNhapHang.Designer.cs">
       <DependentUpon>UILapPhieuNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\UISuaPhieuNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\UISuaPhieuNhapHang.Designer.cs">
+      <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -95,11 +107,17 @@
     <EmbeddedResource Include="UIPhieuNhapHang\UIChiTietPhieuNhapHang.resx">
       <DependentUpon>UIChiTietPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuNhapHang\UIDanhSachMatHang.resx">
+      <DependentUpon>UIDanhSachMatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuNhapHang\UILapChiTietPhieuNhapHang.resx">
       <DependentUpon>UILapChiTietPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuNhapHang\UILapPhieuNhapHang.resx">
       <DependentUpon>UILapPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuNhapHang\UISuaPhieuNhapHang.resx">
+      <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\blue-sky.png" />
+    <None Include="Resources\sales-icon-large1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
