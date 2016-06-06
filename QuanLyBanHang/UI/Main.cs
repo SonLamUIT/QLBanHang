@@ -100,7 +100,9 @@ namespace UI
 
         private void btThemPhieuThuChi_Click(object sender, EventArgs e)
         {
-           UIPhieuThucChi.UILapPhieuThucChi 
+            UI.UIPhieuThuChi.UILapPhieuThuChi uilptc = new UIPhieuThuChi.UILapPhieuThuChi();
+            uilptc.ShowDialog();
+            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
     }
 }

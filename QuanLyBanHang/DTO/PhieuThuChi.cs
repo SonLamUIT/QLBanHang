@@ -9,21 +9,23 @@ namespace DTO
     public class PhieuThuChi
     {
         public string SoPTC { get; set; }
-        public DateTime NgayLap { get; set; }
+        public string NgayLap { get; set; }
         public string MaDoiTac { get; set; }
-        public double TongNo { get; set; }
-        public double SoTien { get; set; }
+        public Int64 TongNo { get; set; }
+        public Int64 SoTien { get; set; }
+        public string LaPhieuThuHayChi { set; get; }
         public PhieuThuChi()
         {
 
         }
-        public PhieuThuChi(string so, DateTime ngay, string ma, double tongno, double sotien)
+        public PhieuThuChi(string so, string ngay, string ma, Int64 tongno, Int64 sotien, string laphieuthuhaychi)
         {
             SoPTC = so;
             NgayLap = ngay;
             MaDoiTac = ma;
             TongNo = tongno;
             SoTien = sotien;
+            LaPhieuThuHayChi = laphieuthuhaychi;
         }
     }
 }

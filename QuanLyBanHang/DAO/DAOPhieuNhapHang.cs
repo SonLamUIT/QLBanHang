@@ -24,14 +24,15 @@ namespace DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
-                if(dt!=null)
-                return false;
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return true;
             }
             catch (Exception)
             {
                 conn.Close();
             }
-            return true;
+            return false;
         }
         public bool LuuPhieuNhapHang(PhieuNhapHang pnh)
         {
@@ -48,7 +49,9 @@ namespace DAO
                 SqlDataAdapter da = new SqlDataAdapter(cmd1);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt != null) return true;
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return true;
                 conn.Close();                
             }
             catch (Exception)
@@ -140,7 +143,9 @@ namespace DAO
                 SqlDataAdapter da = new SqlDataAdapter(cmd1);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt != null) return true;
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return true;
                 conn.Close();
             }
             catch (Exception)
@@ -168,7 +173,9 @@ namespace DAO
                 SqlDataAdapter da = new SqlDataAdapter(cmd1);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt != null) return true;
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return true;
                 conn.Close();
             }
             catch (Exception)
@@ -178,5 +185,4 @@ namespace DAO
             return false;
         }
     }
-
 }

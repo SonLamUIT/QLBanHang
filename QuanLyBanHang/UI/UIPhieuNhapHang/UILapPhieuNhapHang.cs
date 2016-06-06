@@ -24,12 +24,11 @@ namespace UI.UIPhieuNhapHang
             dtopnh = new DTO.PhieuNhapHang();
             InitializeComponent();
         }
-
         private void btThem_Click(object sender, EventArgs e)
         {
             
             if (tbSoPhieuNhapHang.Text.ToString() == "" ||
-                cbSoDonDatHangNCC.SelectedItem.ToString() == "" ||
+                cbSoDonDatHangNCC.Text == "" ||
                 datNgayNhap.Text.ToString() == "" ||
                 //tbTongTien.Text.ToString() == "" ||
                 tbThanhToan.Text.ToString() == "" ||               
@@ -51,6 +50,7 @@ namespace UI.UIPhieuNhapHang
                 dtopnh.TongTien = 0;               
                 dtopnh.ThanhToan = Convert.ToInt64(tbThanhToan.Text.ToString());
                 //dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
+                
                 dtopnh.NgayNhap = datNgayNhap.Value.ToString("dd/MM/yyyy hh:mm:ss");
                 dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
                 if (dtopnh.ConLai < 0)

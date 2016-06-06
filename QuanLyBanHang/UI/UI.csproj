@@ -91,6 +91,12 @@
     <Compile Include="UIPhieuNhapHang\UISuaPhieuNhapHang.Designer.cs">
       <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIPhieuThuChi\UIDanhSachDoiTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuThuChi\UIDanhSachDoiTac.Designer.cs">
+      <DependentUpon>UIDanhSachDoiTac.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIPhieuThuChi\UILapPhieuThuChi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuNhapHang\UISuaPhieuNhapHang.resx">
       <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuThuChi\UIDanhSachDoiTac.resx">
+      <DependentUpon>UIDanhSachDoiTac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuThuChi\UILapPhieuThuChi.resx">
+      <DependentUpon>UILapPhieuThuChi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
