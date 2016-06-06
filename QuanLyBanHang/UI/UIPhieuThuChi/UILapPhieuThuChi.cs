@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
-using MetroFramework.Forms;
 using DAO;
-
-namespace UI
+using DTO;
+using MetroFramework;
+namespace UI.UIPhieuThucChi
 {
-    public partial class frm_DoiTac : MetroForm
+    public partial class UILapPhieuThuChi : MetroFramework.Forms.MetroForm
     {
-        public frm_DoiTac()
+        public UILapPhieuThuChi()
         {
             InitializeComponent();
-        }
+        }       
     }
 }

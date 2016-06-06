@@ -91,6 +91,12 @@
     <Compile Include="UIPhieuNhapHang\UISuaPhieuNhapHang.Designer.cs">
       <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIPhieuThuChi\UILapPhieuThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuThuChi\UILapPhieuThuChi.Designer.cs">
+      <DependentUpon>UILapPhieuThuChi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,9 @@
   <ItemGroup>
     <Content Include="Resources\blue-sky.png" />
     <None Include="Resources\sales-icon-large1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaoCao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

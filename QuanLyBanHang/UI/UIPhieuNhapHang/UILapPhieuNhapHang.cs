@@ -31,26 +31,30 @@ namespace UI.UIPhieuNhapHang
             if (tbSoPhieuNhapHang.Text.ToString() == "" ||
                 cbSoDonDatHangNCC.SelectedItem.ToString() == "" ||
                 datNgayNhap.Text.ToString() == "" ||
-                tbTongTien.Text.ToString() == "" ||
+                //tbTongTien.Text.ToString() == "" ||
                 tbThanhToan.Text.ToString() == "" ||               
-                Convert.ToUInt64(tbTongTien.Text.ToString()) < 0 ||
-                Convert.ToUInt64(tbThanhToan.Text.ToString()) < 0 ||
-                ((Convert.ToUInt64(tbTongTien.Text.ToString()) - Convert.ToUInt64(tbThanhToan.Text.ToString()))<0)  
+                //Convert.ToUInt64(tbTongTien.Text.ToString()) < 0 ||
+                Convert.ToUInt64(tbThanhToan.Text.ToString()) < 0 //||
+                //((Convert.ToUInt64(tbTongTien.Text.ToString()) - Convert.ToUInt64(tbThanhToan.Text.ToString()))<0)  
                 //|| Main.IsNumeric(tbThanhToan.Text.ToString()) ||
                 //Main.IsNumeric(tbTongTien.Text.ToString())
                 )
                 MessageBox.Show("Nhập lại thông tin chính xác!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                if (daopnh.KiemTraSoPhieuNhapHangDaTonTai("exec KiemTraSoPhieuNhapHangTrongPhieuNhapHang '0'",tbSoPhieuNhapHang.Text.ToString()))
+                if (daopnh.KiemTraSoPhieuNhapHangDaTonTai(tbSoPhieuNhapHang.Text.ToString()))
                     MessageBox.Show("Mã phiếu nhập hàng đã tồn tại!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
             {
                 dtopnh.SoPNH = tbSoPhieuNhapHang.Text.ToString();
                 dtopnh.SoDDH_NCC = cbSoDonDatHangNCC.Text;
-                dtopnh.TongTien = Convert.ToUInt64(tbTongTien.Text.ToString());
-                dtopnh.ThanhToan = Convert.ToUInt64(tbThanhToan.Text.ToString());
-                dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
+                //dtopnh.TongTien = Convert.ToUInt64(tbTongTien.Text.ToString());
+                dtopnh.TongTien = 0;               
+                dtopnh.ThanhToan = Convert.ToInt64(tbThanhToan.Text.ToString());
+                //dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
                 dtopnh.NgayNhap = datNgayNhap.Value.ToString("dd/MM/yyyy hh:mm:ss");
+                dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
+                if (dtopnh.ConLai < 0)
+                    dtopnh.ConLai = 0;
                 if (daopnh.LuuPhieuNhapHang(dtopnh))
                 {
                     MessageBox.Show("Đã lập phiếu nhập hàng thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,14 +87,14 @@ namespace UI.UIPhieuNhapHang
 
         private void tbTongTien_TextChanged(object sender, EventArgs e)
         {
-            if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString())&& (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text)) >= 0)
-                tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
+           // if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString())&& (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text)) >= 0)
+           //    tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
         }
 
         private void tbThanhToan_TextChanged(object sender, EventArgs e)
         {
-            if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString())&& (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text)) >= 0)
-                tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
+           // if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString())&& (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text)) >= 0)
+           //     tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
         }
     }
 }

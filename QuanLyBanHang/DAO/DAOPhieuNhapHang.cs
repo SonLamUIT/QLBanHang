@@ -10,9 +10,28 @@ namespace DAO
 {
     public class DAOPhieuNhapHang : DBConnection
     {
-        public bool KiemTraSoPhieuNhapHangDaTonTai(string proc,string var)
+        public bool KiemTraSoPhieuNhapHangDaTonTai(string var)
         {
-            return KiemTraDuLieuTonTai_1ThamSo(proc, var);
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("select * from PHIEUNHAPHANG where SoPNH='{0}'", var), conn);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if(dt!=null)
+                return false;
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return true;
         }
         public bool LuuPhieuNhapHang(PhieuNhapHang pnh)
         {
@@ -21,8 +40,8 @@ namespace DAO
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                }
-                SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.PHIEUNHAPHANG values ('{0}','{1}','{2}',{3},{4},{5})", pnh.SoPNH,pnh.SoDDH_NCC,pnh.NgayNhap,pnh.TongTien,pnh.ThanhToan,pnh.ConLai),conn);
+                } 
+                SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.PHIEUNHAPHANG values ('{0}','{1}','{2}',{3},{4},{5})", pnh.SoPNH,pnh.SoDDH_NCC,pnh.NgayNhap,pnh.TongTien,pnh.ThanhToan,pnh.ConLai),conn); //(SoPNH,SoDDH_NCC,NgayNhap,TongTien,ThanhToan)
                 cmd.ExecuteNonQuery();
                 SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.PHIEUNHAPHANG where SoPNH= '{0}'", pnh.SoPNH), conn);
                 cmd1.ExecuteNonQuery();
@@ -140,7 +159,11 @@ namespace DAO
                 }
                 SqlCommand cmd = new SqlCommand(string.Format("insert into dbo.CT_PNH values ('{0}','{1}',{2},{3},{4},{5})", ctpnh.SoPNH,ctpnh.MaMatHang,ctpnh.SoLuongChuaNhap,ctpnh.SoLuongNhap,ctpnh.DonGiaNhap,ctpnh.ThanhTien), conn);
                 cmd.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand(string.Format("exec CapNhatTongTienPhieuNhapHang '{0}',{1}", ctpnh.SoPNH, ctpnh.ThanhTien), conn);
+                cmd2.ExecuteNonQuery();                
                 SqlCommand cmd1 = new SqlCommand(string.Format("select * from dbo.CT_PNH where SoPNH= '{0}'", ctpnh.SoPNH), conn);
+                SqlCommand cmd3 = new SqlCommand(string.Format("exec CapNhatConLaiPhieuNhapHang '{0}'", ctpnh.SoPNH), conn);
+                cmd3.ExecuteNonQuery();
                 cmd1.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd1);
                 DataTable dt = new DataTable();

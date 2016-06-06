@@ -102,8 +102,8 @@ namespace DAO
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand(String.Format(proc,var), conn);
-                cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(string.Format(proc,var), conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

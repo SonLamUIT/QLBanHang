@@ -35,6 +35,7 @@
             this.metroTabPage8 = new MetroFramework.Controls.MetroTabPage();
             this.btThemPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.btXoa = new MetroFramework.Controls.MetroButton();
+            this.btTimKiem = new MetroFramework.Controls.MetroButton();
             this.btSuaPNH = new MetroFramework.Controls.MetroButton();
             this.btCapNhatDanhSachPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.dgvDanhSachPhieuNhapHang = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,14 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.btCapNhatDanhSachChiTietPhieuNhapHang = new MetroFramework.Controls.MetroButton();
             this.dgvDanhSachChiTietPhieuNhapHang = new System.Windows.Forms.DataGridView();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.btThemPhieuThuChi = new MetroFramework.Controls.MetroButton();
+            this.btSuaPhieuThuChi = new MetroFramework.Controls.MetroButton();
+            this.btXoaPhieuThuChi = new MetroFramework.Controls.MetroButton();
+            this.btCapNhatPhieuThuChi = new MetroFramework.Controls.MetroButton();
+            this.dgvThuChi = new System.Windows.Forms.DataGridView();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -52,7 +60,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
@@ -60,6 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhapHang)).BeginInit();
             this.metroTabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietPhieuNhapHang)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThuChi)).BeginInit();
             this.metroTabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +80,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(965, 480);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -95,9 +104,10 @@
             // 
             this.metroTabControl2.Controls.Add(this.metroTabPage8);
             this.metroTabControl2.Controls.Add(this.metroTabPage9);
+            this.metroTabControl2.Controls.Add(this.metroTabPage2);
             this.metroTabControl2.Location = new System.Drawing.Point(3, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 2;
             this.metroTabControl2.Size = new System.Drawing.Size(958, 439);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -106,6 +116,7 @@
             // 
             this.metroTabPage8.Controls.Add(this.btThemPhieuNhapHang);
             this.metroTabPage8.Controls.Add(this.btXoa);
+            this.metroTabPage8.Controls.Add(this.btTimKiem);
             this.metroTabPage8.Controls.Add(this.btSuaPNH);
             this.metroTabPage8.Controls.Add(this.btCapNhatDanhSachPhieuNhapHang);
             this.metroTabPage8.Controls.Add(this.dgvDanhSachPhieuNhapHang);
@@ -123,7 +134,7 @@
             // 
             // btThemPhieuNhapHang
             // 
-            this.btThemPhieuNhapHang.Location = new System.Drawing.Point(758, 42);
+            this.btThemPhieuNhapHang.Location = new System.Drawing.Point(758, 81);
             this.btThemPhieuNhapHang.Name = "btThemPhieuNhapHang";
             this.btThemPhieuNhapHang.Size = new System.Drawing.Size(189, 33);
             this.btThemPhieuNhapHang.TabIndex = 9;
@@ -133,12 +144,22 @@
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(758, 81);
+            this.btXoa.Location = new System.Drawing.Point(758, 159);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(189, 33);
             this.btXoa.TabIndex = 8;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseSelectable = true;
+            // 
+            // btTimKiem
+            // 
+            this.btTimKiem.Location = new System.Drawing.Point(758, 3);
+            this.btTimKiem.Name = "btTimKiem";
+            this.btTimKiem.Size = new System.Drawing.Size(189, 33);
+            this.btTimKiem.TabIndex = 7;
+            this.btTimKiem.Text = "Tìm Kiếm";
+            this.btTimKiem.UseSelectable = true;
+            this.btTimKiem.Click += new System.EventHandler(this.btSuaPNH_Click);
             // 
             // btSuaPNH
             // 
@@ -152,7 +173,7 @@
             // 
             // btCapNhatDanhSachPhieuNhapHang
             // 
-            this.btCapNhatDanhSachPhieuNhapHang.Location = new System.Drawing.Point(758, 3);
+            this.btCapNhatDanhSachPhieuNhapHang.Location = new System.Drawing.Point(758, 42);
             this.btCapNhatDanhSachPhieuNhapHang.Name = "btCapNhatDanhSachPhieuNhapHang";
             this.btCapNhatDanhSachPhieuNhapHang.Size = new System.Drawing.Size(189, 33);
             this.btCapNhatDanhSachPhieuNhapHang.TabIndex = 6;
@@ -165,7 +186,7 @@
             this.dgvDanhSachPhieuNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhieuNhapHang.Location = new System.Drawing.Point(-7, 3);
             this.dgvDanhSachPhieuNhapHang.Name = "dgvDanhSachPhieuNhapHang";
-            this.dgvDanhSachPhieuNhapHang.Size = new System.Drawing.Size(759, 391);
+            this.dgvDanhSachPhieuNhapHang.Size = new System.Drawing.Size(759, 398);
             this.dgvDanhSachPhieuNhapHang.TabIndex = 5;
             // 
             // metroTabPage9
@@ -229,10 +250,75 @@
             // dgvDanhSachChiTietPhieuNhapHang
             // 
             this.dgvDanhSachChiTietPhieuNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachChiTietPhieuNhapHang.Location = new System.Drawing.Point(0, -3);
+            this.dgvDanhSachChiTietPhieuNhapHang.Location = new System.Drawing.Point(0, 3);
             this.dgvDanhSachChiTietPhieuNhapHang.Name = "dgvDanhSachChiTietPhieuNhapHang";
-            this.dgvDanhSachChiTietPhieuNhapHang.Size = new System.Drawing.Size(752, 386);
+            this.dgvDanhSachChiTietPhieuNhapHang.Size = new System.Drawing.Size(752, 398);
             this.dgvDanhSachChiTietPhieuNhapHang.TabIndex = 5;
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.btThemPhieuThuChi);
+            this.metroTabPage2.Controls.Add(this.btSuaPhieuThuChi);
+            this.metroTabPage2.Controls.Add(this.btXoaPhieuThuChi);
+            this.metroTabPage2.Controls.Add(this.btCapNhatPhieuThuChi);
+            this.metroTabPage2.Controls.Add(this.dgvThuChi);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(950, 397);
+            this.metroTabPage2.TabIndex = 2;
+            this.metroTabPage2.Text = "Thu-Chi";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // btThemPhieuThuChi
+            // 
+            this.btThemPhieuThuChi.Location = new System.Drawing.Point(758, 42);
+            this.btThemPhieuThuChi.Name = "btThemPhieuThuChi";
+            this.btThemPhieuThuChi.Size = new System.Drawing.Size(189, 33);
+            this.btThemPhieuThuChi.TabIndex = 13;
+            this.btThemPhieuThuChi.Text = "Thêm";
+            this.btThemPhieuThuChi.UseSelectable = true;
+            this.btThemPhieuThuChi.Click += new System.EventHandler(this.btThemPhieuThuChi_Click);
+            // 
+            // btSuaPhieuThuChi
+            // 
+            this.btSuaPhieuThuChi.Location = new System.Drawing.Point(758, 81);
+            this.btSuaPhieuThuChi.Name = "btSuaPhieuThuChi";
+            this.btSuaPhieuThuChi.Size = new System.Drawing.Size(189, 33);
+            this.btSuaPhieuThuChi.TabIndex = 12;
+            this.btSuaPhieuThuChi.Text = "Sửa";
+            this.btSuaPhieuThuChi.UseSelectable = true;
+            // 
+            // btXoaPhieuThuChi
+            // 
+            this.btXoaPhieuThuChi.Location = new System.Drawing.Point(758, 120);
+            this.btXoaPhieuThuChi.Name = "btXoaPhieuThuChi";
+            this.btXoaPhieuThuChi.Size = new System.Drawing.Size(189, 33);
+            this.btXoaPhieuThuChi.TabIndex = 11;
+            this.btXoaPhieuThuChi.Text = "Xóa";
+            this.btXoaPhieuThuChi.UseSelectable = true;
+            // 
+            // btCapNhatPhieuThuChi
+            // 
+            this.btCapNhatPhieuThuChi.Location = new System.Drawing.Point(758, 3);
+            this.btCapNhatPhieuThuChi.Name = "btCapNhatPhieuThuChi";
+            this.btCapNhatPhieuThuChi.Size = new System.Drawing.Size(189, 33);
+            this.btCapNhatPhieuThuChi.TabIndex = 10;
+            this.btCapNhatPhieuThuChi.Text = "Cập Nhật";
+            this.btCapNhatPhieuThuChi.UseSelectable = true;
+            this.btCapNhatPhieuThuChi.Click += new System.EventHandler(this.btCapNhatPhieuThuChi_Click);
+            // 
+            // dgvThuChi
+            // 
+            this.dgvThuChi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThuChi.Location = new System.Drawing.Point(0, 3);
+            this.dgvThuChi.Name = "dgvThuChi";
+            this.dgvThuChi.Size = new System.Drawing.Size(752, 398);
+            this.dgvThuChi.TabIndex = 6;
             // 
             // metroTabPage7
             // 
@@ -255,6 +341,15 @@
             this.metroTabPage7.VerticalScrollbarBarColor = true;
             this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(419, 42);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(117, 19);
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "Quản Lý Bán Hàng";
             // 
             // pictureBox2
             // 
@@ -325,15 +420,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(419, 42);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(117, 19);
-            this.metroLabel5.TabIndex = 7;
-            this.metroLabel5.Text = "Quản Lý Bán Hàng";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhapHang)).EndInit();
             this.metroTabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietPhieuNhapHang)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThuChi)).EndInit();
             this.metroTabPage7.ResumeLayout(false);
             this.metroTabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -387,5 +475,12 @@
         private System.Windows.Forms.DataGridView dgvDanhSachChiTietPhieuNhapHang;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroButton btTimKiem;
+        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private System.Windows.Forms.DataGridView dgvThuChi;
+        private MetroFramework.Controls.MetroButton btThemPhieuThuChi;
+        private MetroFramework.Controls.MetroButton btSuaPhieuThuChi;
+        private MetroFramework.Controls.MetroButton btXoaPhieuThuChi;
+        private MetroFramework.Controls.MetroButton btCapNhatPhieuThuChi;
     }
 }

@@ -42,8 +42,9 @@ namespace UI.UIPhieuNhapHang
 
         private void tbTongTien_TextChanged(object sender, EventArgs e)
         {
-            if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString()) && (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text))>=0)
-                tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
+            // if (tbTongTien.Text.ToString() != "" && tbThanhToan.Text.ToString() != "" && Main.IsNumeric(tbThanhToan.Text.ToString()) && Main.IsNumeric(tbTongTien.Text.ToString()) && (Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text))>=0)
+            //    tbConLai.Text = Convert.ToString(Convert.ToUInt64(tbTongTien.Text) - Convert.ToUInt64(tbThanhToan.Text));
+
         }
 
         private void tbThanhToan_TextChanged(object sender, EventArgs e)

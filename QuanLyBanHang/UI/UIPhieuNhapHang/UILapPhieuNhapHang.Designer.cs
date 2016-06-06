@@ -32,15 +32,15 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.tbSoPhieuNhapHang = new MetroFramework.Controls.MetroTextBox();
             this.tbThanhToan = new MetroFramework.Controls.MetroTextBox();
-            this.tbTongTien = new MetroFramework.Controls.MetroTextBox();
             this.datNgayNhap = new MetroFramework.Controls.MetroDateTime();
             this.btLuu = new MetroFramework.Controls.MetroButton();
             this.cbSoDonDatHangNCC = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.tbConLai = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.tbTongTien = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -79,15 +79,6 @@
             this.metroLabel5.TabIndex = 4;
             this.metroLabel5.Text = "Thanh Toán";
             // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 177);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(67, 19);
-            this.metroLabel6.TabIndex = 5;
-            this.metroLabel6.Text = "Tổng Tiền";
-            // 
             // tbSoPhieuNhapHang
             // 
             this.tbSoPhieuNhapHang.Lines = new string[0];
@@ -114,20 +105,6 @@
             this.tbThanhToan.TabIndex = 8;
             this.tbThanhToan.UseSelectable = true;
             this.tbThanhToan.TextChanged += new System.EventHandler(this.tbThanhToan_TextChanged);
-            // 
-            // tbTongTien
-            // 
-            this.tbTongTien.Lines = new string[0];
-            this.tbTongTien.Location = new System.Drawing.Point(251, 173);
-            this.tbTongTien.MaxLength = 32767;
-            this.tbTongTien.Name = "tbTongTien";
-            this.tbTongTien.PasswordChar = '\0';
-            this.tbTongTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbTongTien.SelectedText = "";
-            this.tbTongTien.Size = new System.Drawing.Size(442, 23);
-            this.tbTongTien.TabIndex = 9;
-            this.tbTongTien.UseSelectable = true;
-            this.tbTongTien.TextChanged += new System.EventHandler(this.tbTongTien_TextChanged);
             // 
             // datNgayNhap
             // 
@@ -180,6 +157,30 @@
             this.tbConLai.TabIndex = 8;
             this.tbConLai.UseSelectable = true;
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(26, 177);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel6.TabIndex = 5;
+            this.metroLabel6.Text = "Tổng Tiền";
+            // 
+            // tbTongTien
+            // 
+            this.tbTongTien.Lines = new string[0];
+            this.tbTongTien.Location = new System.Drawing.Point(251, 173);
+            this.tbTongTien.MaxLength = 32767;
+            this.tbTongTien.Name = "tbTongTien";
+            this.tbTongTien.PasswordChar = '\0';
+            this.tbTongTien.ReadOnly = true;
+            this.tbTongTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbTongTien.SelectedText = "";
+            this.tbTongTien.Size = new System.Drawing.Size(442, 23);
+            this.tbTongTien.TabIndex = 9;
+            this.tbTongTien.UseSelectable = true;
+            this.tbTongTien.TextChanged += new System.EventHandler(this.tbTongTien_TextChanged);
+            // 
             // UILapPhieuNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,14 +214,14 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox tbSoPhieuNhapHang;
         private MetroFramework.Controls.MetroTextBox tbThanhToan;
-        private MetroFramework.Controls.MetroTextBox tbTongTien;
         private MetroFramework.Controls.MetroDateTime datNgayNhap;
         private MetroFramework.Controls.MetroButton btLuu;
         private MetroFramework.Controls.MetroComboBox cbSoDonDatHangNCC;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox tbConLai;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroTextBox tbTongTien;
     }
 }

@@ -58,6 +58,7 @@
             this.tbTongTien.MaxLength = 32767;
             this.tbTongTien.Name = "tbTongTien";
             this.tbTongTien.PasswordChar = '\0';
+            this.tbTongTien.ReadOnly = true;
             this.tbTongTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbTongTien.SelectedText = "";
             this.tbTongTien.Size = new System.Drawing.Size(442, 23);

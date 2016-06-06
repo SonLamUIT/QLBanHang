@@ -59,8 +59,10 @@ namespace UI
 
         private void Main_Load(object sender, EventArgs e)
         {
+            //nạp dữ liệu lúc chương trình khởi động, dữ liệu bao gồm các bảng lưu trong cơ sở dữ liệu
             dgvDanhSachPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
             dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachChiTietPhieuNhapHang");
+            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
 
         private void btSuaCTPNH_Click(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace UI
 
         }
 
+        //Sửa phiếu nhập hàng
         private void btSuaPNH_Click(object sender, EventArgs e)
         {
 
@@ -80,13 +83,24 @@ namespace UI
                 dtopnh.SoPNH= dgvDanhSachPhieuNhapHang.CurrentRow.Cells[0].Value.ToString();
                 dtopnh.SoDDH_NCC = dgvDanhSachPhieuNhapHang.CurrentRow.Cells[1].Value.ToString();
                 dtopnh.NgayNhap= dgvDanhSachPhieuNhapHang.CurrentRow.Cells[2].Value.ToString();
-                dtopnh.TongTien= Convert.ToUInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[3].Value);
-                dtopnh.ThanhToan = Convert.ToUInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[4].Value);
-                dtopnh.ConLai = Convert.ToUInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[5].Value);
+                dtopnh.TongTien= Convert.ToInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[3].Value);
+                dtopnh.ThanhToan = Convert.ToInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[4].Value);
+                dtopnh.ConLai = Convert.ToInt64(dgvDanhSachPhieuNhapHang.CurrentRow.Cells[5].Value);
                 UI.UIPhieuNhapHang.UISuaPhieuNhapHang spnh = new UIPhieuNhapHang.UISuaPhieuNhapHang(dtopnh);
                 spnh.ShowDialog();
             }
             dgvDanhSachPhieuNhapHang.DataSource= db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
+        }
+
+        //cập nhật danh sách phiếu thu chi
+        private void btCapNhatPhieuThuChi_Click(object sender, EventArgs e)
+        {
+            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+        }
+
+        private void btThemPhieuThuChi_Click(object sender, EventArgs e)
+        {
+           UIPhieuThucChi.UILapPhieuThucChi 
         }
     }
 }

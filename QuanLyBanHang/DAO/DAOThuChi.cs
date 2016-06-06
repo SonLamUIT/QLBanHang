@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.SqlClient;
+using System.Data;
 namespace DAO
 {
-    public class DoiTac_DAO: DBConnection
-    {
-        
+    class DAOThuChi: DBConnection
+    {   
+       
     }
 }

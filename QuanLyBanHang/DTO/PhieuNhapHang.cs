@@ -11,14 +11,14 @@ namespace DTO
         public string SoPNH { get; set; }
         public string SoDDH_NCC { get; set; }
         public string NgayNhap { get; set; }
-        public UInt64 TongTien { get; set; }
-        public UInt64 ThanhToan { get; set; }
-        public UInt64 ConLai { get; set; }
+        public Int64 TongTien { get; set; }
+        public Int64 ThanhToan { get; set; }
+        public Int64 ConLai { get; set; }
         public PhieuNhapHang()
         {
 
         }
-        public PhieuNhapHang(string sopnh, string sddh, string ngay, UInt64 tong, UInt64 thanhtoan, UInt64 conlai)
+        public PhieuNhapHang(string sopnh, string sddh, string ngay, Int64 tong, Int64 thanhtoan, Int64 conlai)
         {
             SoPNH = sopnh;
             SoDDH_NCC = sddh;
