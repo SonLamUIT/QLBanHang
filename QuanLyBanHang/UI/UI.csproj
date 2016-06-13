@@ -36,6 +36,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.9, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework">
       <HintPath>MetroFramework\MetroFramework.dll</HintPath>
@@ -81,6 +82,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSBaoCaoLoiNhuan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhucHoiDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhucHoiDuLieu.designer.cs">
+      <DependentUpon>frmPhucHoiDuLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_BaoCaoCongNoKH.cs">
       <SubType>Form</SubType>
@@ -136,6 +149,12 @@
     <Compile Include="frm_PhieuGiaoHang.Designer.cs">
       <DependentUpon>frm_PhieuGiaoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_SaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SaoLuu.Designer.cs">
+      <DependentUpon>frm_SaoLuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ThayDoiQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +184,12 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +248,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBaoCaoDoanhThu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhucHoiDuLieu.resx">
+      <DependentUpon>frmPhucHoiDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_BaoCaoCongNoKH.resx">
       <DependentUpon>frm_BaoCaoCongNoKH.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -334,7 +368,41 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Add List-100.png" />
+    <Content Include="Resources\Add User-100.png" />
+    <Content Include="Resources\Approval-100.png" />
     <Content Include="Resources\blue-sky.png" />
+    <Content Include="Resources\Bullish-100 %281%29.png" />
+    <Content Include="Resources\Data Backup-100.png" />
+    <Content Include="Resources\Data Recovery-100.png" />
+    <Content Include="Resources\Data Recovery-1001.png" />
+    <Content Include="Resources\Database-100.png" />
+    <Content Include="Resources\Delete Property-100.png" />
+    <Content Include="Resources\Edit User-100.png" />
+    <Content Include="Resources\Edit-100.png" />
+    <Content Include="Resources\Exit Sign-100.png" />
+    <Content Include="Resources\Fine Print-100 %281%29.png" />
+    <Content Include="Resources\Gender Neutral User-26 %281%29.png" />
+    <Content Include="Resources\gorund.jpg" />
+    <Content Include="Resources\imageedit_2_5965726070.jpg" />
+    <Content Include="Resources\imageedit_2_59657260701.jpg" />
+    <Content Include="Resources\Import-100.png" />
+    <Content Include="Resources\Info-100.png" />
+    <Content Include="Resources\left216 %281%29.png" />
+    <Content Include="Resources\left216.png" />
+    <Content Include="Resources\Logout-100.png" />
+    <Content Include="Resources\Minus-100.png" />
+    <Content Include="Resources\Myspace-100.png" />
+    <Content Include="Resources\Password1-26.png" />
+    <Content Include="Resources\Plus-100.png" />
+    <Content Include="Resources\Purchase Order-100.png" />
+    <Content Include="Resources\Remove User-100.png" />
+    <Content Include="Resources\right237.png" />
+    <Content Include="Resources\Search-100.png" />
+    <Content Include="Resources\Security Checked-100.png" />
+    <Content Include="Resources\Settings-100.png" />
+    <Content Include="Resources\skyred.png" />
+    <None Include="Resources\desktop.ini" />
     <None Include="Resources\sales-icon-large1.png" />
   </ItemGroup>
   <ItemGroup>

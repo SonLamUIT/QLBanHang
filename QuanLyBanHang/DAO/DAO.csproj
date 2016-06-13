@@ -45,9 +45,11 @@
     <Compile Include="CT_BaoCaoCongNoNCC_DAO.cs" />
     <Compile Include="CT_BaoCaoCongNo_DAO.cs" />
     <Compile Include="CT_PhieuGiaoHang_DAO.cs" />
+    <Compile Include="DangNhapDAO.cs" />
     <Compile Include="DAOBaoCao.cs" />
     <Compile Include="DAOPhieuNhapHang.cs" />
     <Compile Include="DAOThuChi.cs" />
+    <Compile Include="DAO_SaoLuuDuLieu.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DoiTac_DAO.cs" />
