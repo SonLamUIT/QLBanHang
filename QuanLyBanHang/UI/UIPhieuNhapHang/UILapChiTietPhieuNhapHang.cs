@@ -38,10 +38,10 @@ namespace UI.UIPhieuNhapHang
         private void btLuu_Click(object sender, EventArgs e)
         {
             if (Convert.ToUInt64(tbDonGiaNhap.Text) < 0 ||
-                Convert.ToUInt64(tbSoLuongChuaNhap.Text) < 0 ||
+                //Convert.ToUInt64(tbSoLuongChuaNhap.Text) < 0 ||
                 Convert.ToUInt64(tbSoLuongNhap.Text) < 0 ||
                 tbDonGiaNhap.Text.ToString() == "" ||
-                tbSoLuongChuaNhap.Text.ToString() == "" ||
+                //tbSoLuongChuaNhap.Text.ToString() == "" ||
                 tbSoLuongNhap.Text.ToString() == "" ||
                 cbMaMatHang.Text == "" ||
                 cbSoPhieuNhapHang.Text == ""
@@ -51,10 +51,11 @@ namespace UI.UIPhieuNhapHang
             {
                 ctpnh.SoPNH = cbSoPhieuNhapHang.Text.ToString();
                 ctpnh.MaMatHang = cbMaMatHang.Text.ToString();
-                ctpnh.SoLuongChuaNhap = Convert.ToInt32(tbSoLuongChuaNhap.Text.ToString());
+                ctpnh.SoLuongChuaNhap = Convert.ToInt32(tbSoLuongChuaNhap.Text.ToString())- Convert.ToInt32(tbSoLuongNhap.Text.ToString());
                 ctpnh.SoLuongNhap = Convert.ToInt32(tbSoLuongNhap.Text.ToString());
                 ctpnh.DonGiaNhap = Convert.ToUInt64(tbDonGiaNhap.Text.ToString());
                 ctpnh.ThanhTien= Convert.ToUInt64(tbSoLuongNhap.Text.ToString()) * Convert.ToUInt64(tbDonGiaNhap.Text.ToString());
+             
                 if (daopnh.LapChiTietPhieuNhapHang(ctpnh))
                 {
                     MessageBox.Show("Đã thêm chi tiết phiếu nhập hàng " + ctpnh.SoPNH, "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -64,7 +65,8 @@ namespace UI.UIPhieuNhapHang
                 {
                     MessageBox.Show("Thêm chi tiết phiếu nhập hàng " + ctpnh.SoPNH + " không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
-                }                 
+                }
+                daopnh.CapNhatSoLuongNhap(daopnh.LaySoDDH_NCC(cbSoPhieuNhapHang.Text.ToString()), cbMaMatHang.Text, tbSoLuongNhap.Text.ToString());       
                 
             }
         }
@@ -85,6 +87,18 @@ namespace UI.UIPhieuNhapHang
         {
             if (tbSoLuongNhap.Text.ToString() != "" && tbDonGiaNhap.Text.ToString() != "" && Main.IsNumeric(tbSoLuongNhap.Text.ToString()) && Main.IsNumeric(tbDonGiaNhap.Text.ToString()))
                 tbThanhTien.Text = Convert.ToString(Convert.ToUInt64(tbSoLuongNhap.Text) * Convert.ToUInt64(tbDonGiaNhap.Text));
+
+        }
+
+        private void cbSoPhieuNhapHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMaMatHang.SelectedIndex != -1)
+                tbSoLuongChuaNhap.Text = Convert.ToString(daopnh.LaySoLuongChuaNhap(cbMaMatHang.Text.ToString(), cbSoPhieuNhapHang.Text.ToString()));
+        }
+        private void cbMaMatHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSoPhieuNhapHang.SelectedIndex != -1)
+                tbSoLuongChuaNhap.Text = Convert.ToString(daopnh.LaySoLuongChuaNhap(cbMaMatHang.Text.ToString(), cbSoPhieuNhapHang.Text.ToString()));
         }
     }
 }

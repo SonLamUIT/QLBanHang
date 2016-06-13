@@ -26,28 +26,30 @@ namespace UI.UIPhieuThuChi
         private void btLapPhieu_Click(object sender, EventArgs e)
         {
             if (    //(rbPhieuChi.Checked || rbPhieuThu.Checked) ||
-                tbSoPhieu.Text.ToString() == "" || 
-                cbMaDoiTac.Text == "" ||                 
-                datNgayLap.Text.ToString() == "" || 
-                tbSoTien.Text.ToString() == ""||                
-                Convert.ToInt64(tbSoTien.Text.ToString())<0
+                tbSoPhieu.Text.ToString() == "" ||
+                cbMaDoiTac.Text == "" ||
+                datNgayLap.Text.ToString() == "" ||
+                tbSoTien.Text.ToString() == "" ||
+                Convert.ToInt64(tbSoTien.Text.ToString()) < 0
                 )
                 MessageBox.Show("Nhập thông tin sai!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
-                if(daotc.KiemTraSoPhieuThuChiDaTonTai(tbSoPhieu.Text.ToString()))
-                    MessageBox.Show("Mã phiếu đã tồn tại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (daotc.KiemTraSoPhieuThuChiDaTonTai(tbSoPhieu.Text.ToString()))
+                MessageBox.Show("Mã phiếu đã tồn tại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            if (Convert.ToInt64(tbTongNo.Text.ToString()) < 0)
+            {
+                MessageBox.Show("Số tiền nợ bị âm, nhập lại số tiền!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTongNo.Text = daotc.LayTongNoDoiTac(cbMaDoiTac.Text.ToString());
+                tbSoTien.Text = "";
+            }
             else
             {
-                if (rbPhieuChi.Checked)
-                    dtoptc.LaPhieuThuHayChi = "C";
-                else
-                    if (rbPhieuThu.Checked)
-                    dtoptc.LaPhieuThuHayChi = "T";
                 dtoptc.SoPTC = tbSoPhieu.Text.ToString();
                 dtoptc.NgayLap = datNgayLap.Value.ToString("dd/MM/yyyy hh:mm:ss");
                 dtoptc.MaDoiTac = cbMaDoiTac.Text;
-                dtoptc.SoTien=Convert.ToInt64(tbSoTien.Text.ToString());
-                dtoptc.TongNo = 0;
+                dtoptc.SoTien = Convert.ToInt64(tbSoTien.Text.ToString());
+                dtoptc.TongNo = Convert.ToInt64(tbTongNo.Text.ToString());
                 if (daotc.LapPhieuThuChi(dtoptc))
                 {
                     MessageBox.Show("Đã thêm phiếu thu chi " + dtoptc.SoPTC + " thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -64,16 +66,28 @@ namespace UI.UIPhieuThuChi
         {          
         }
         private void UILapPhieuThuChi_Load(object sender, EventArgs e)
-        {
+        {            
             cbMaDoiTac.DataSource = daotc.LayDanhSachDoiTac();
             cbMaDoiTac.ValueMember = "MaDoiTac";
             cbMaDoiTac.DisplayMember = "MaDoiTac";
+            cbMaDoiTac.SelectedIndex = -1;
         }
 
         private void btDanhSachDoiTac_Click(object sender, EventArgs e)
         {
             UIDanhSachDoiTac uidsdt = new UIDanhSachDoiTac();
             uidsdt.ShowDialog();
+        }
+
+        private void cbMaDoiTac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbTongNo.Text = daotc.LayTongNoDoiTac(cbMaDoiTac.Text.ToString());
+        }
+
+        private void tbSoTien_TextChanged(object sender, EventArgs e)
+        {           
+            Int64 tempTongNo1 = (int)Math.Round(Convert.ToDouble(tbTongNo.Text.ToString())) - Convert.ToInt64(tbSoTien.Text.ToString());
+            tbTongNo.Text = tempTongNo1.ToString();            
         }
     }
 }

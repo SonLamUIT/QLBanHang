@@ -8,15 +8,14 @@ namespace DTO
 {
     public class ThamSo
     {
-        public string MaThamSo { get; set; }
-        public string TenThamSo { get; set; }
-        public double GiaTri { get; set; }
+        public Double TiLeGiaLe { get; set; }
+        public Double TiLeGiaSi { get; set; }
+        
         public ThamSo() { }
-        public ThamSo(string Ma, string Ten, double giatri)
+        public ThamSo(Double tlgiale, Double tlgiasi)
         {
-            MaThamSo = Ma;
-            TenThamSo = Ten;
-            GiaTri = giatri;
+            TiLeGiaLe = tlgiale;
+            TiLeGiaSi = tlgiasi;
         }
     }
 }

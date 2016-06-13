@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace DTO
 {
     public class CT_PhieuGiaoHang
-    {
-    //SoLuongChuaGia		int,
+    {        
         public string SoPGH { get; set; }
         public string MaMatHang { get; set; }
         public int SoLuongChuaGiao { get; set; }

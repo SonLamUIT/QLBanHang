@@ -184,5 +184,111 @@ namespace DAO
             }
             return false;
         }
+        public string LayMaDoiTac(string var)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("exec LayMaDoiTacTuDonDatHangNCC '{0}'", var), conn);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return dt.Rows[0][0].ToString();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }           
+            return "";
+        }
+        public void CapNhatTongNoDoiTac(string MaDoiTac,Int64 SoTien)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("exec CapNhatTongNoDoiTacTuPhieuNhapHang '{0}',{1}",MaDoiTac,SoTien), conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+        }        
+        public int LaySoLuongChuaNhap(string SoPNH, string MaMatHang)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("exec LaySoLuongChuaNhapCuaDDH_NCC '{0}','{1}'",SoPNH,MaMatHang), conn);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return Convert.ToInt16(dt.Rows[0][0].ToString());
+               
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return 0;
+        }
+        public void CapNhatSoLuongNhap(string SoDDH_NCC, string MaMatHang, string SoLuongDaNhap)
+        {
+
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("exec CapNhatSoLuongNhapDDH_NCC '{0}','{1}',{2}", SoDDH_NCC, MaMatHang, SoLuongDaNhap), conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+        }
+        public string LaySoDDH_NCC(string SoPNH)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("exec PhieuNhapHang_LaySoDDHNCC '{0}'", SoPNH), conn);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt != null)
+                    if (dt.Rows.Count > 0)
+                        return dt.Rows[0][0].ToString();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return "";
+        }
     }
 }

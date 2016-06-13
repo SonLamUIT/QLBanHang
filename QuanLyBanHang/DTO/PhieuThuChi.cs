@@ -12,20 +12,18 @@ namespace DTO
         public string NgayLap { get; set; }
         public string MaDoiTac { get; set; }
         public Int64 TongNo { get; set; }
-        public Int64 SoTien { get; set; }
-        public string LaPhieuThuHayChi { set; get; }
+        public Int64 SoTien { get; set; }        
         public PhieuThuChi()
         {
 
         }
-        public PhieuThuChi(string so, string ngay, string ma, Int64 tongno, Int64 sotien, string laphieuthuhaychi)
+        public PhieuThuChi(string so, string ngay, string ma, Int64 tongno, Int64 sotien)
         {
             SoPTC = so;
             NgayLap = ngay;
             MaDoiTac = ma;
             TongNo = tongno;
-            SoTien = sotien;
-            LaPhieuThuHayChi = laphieuthuhaychi;
+            SoTien = sotien;            
         }
     }
 }

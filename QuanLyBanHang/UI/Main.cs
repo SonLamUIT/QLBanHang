@@ -63,6 +63,7 @@ namespace UI
             dgvDanhSachPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
             dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachChiTietPhieuNhapHang");
             dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+        
         }
 
         private void btSuaCTPNH_Click(object sender, EventArgs e)
@@ -103,6 +104,29 @@ namespace UI
             UI.UIPhieuThuChi.UILapPhieuThuChi uilptc = new UIPhieuThuChi.UILapPhieuThuChi();
             uilptc.ShowDialog();
             dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            UI.BaoCao.BaoCaoDoanhThuTheoMatHang bcdttmh = new BaoCao.BaoCaoDoanhThuTheoMatHang();
+            bcdttmh.ShowDialog();
+        }
+        private void btCapNhatThuChi_Click(object sender, EventArgs e)
+        {
+            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+        }
+
+        private void btThemThuChi_Click(object sender, EventArgs e)
+        {
+            UI.UIPhieuThuChi.UILapPhieuThuChi uilptc = new UIPhieuThuChi.UILapPhieuThuChi();
+            uilptc.ShowDialog();
+            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+        }
+
+        private void btBaoCaoDoanhThuTheoMatHang_Click(object sender, EventArgs e)
+        {
+            UI.BaoCao.BaoCaoDoanhThuTheoMatHang bcdttmh = new BaoCao.BaoCaoDoanhThuTheoMatHang();
+            bcdttmh.ShowDialog();
         }
     }
 }

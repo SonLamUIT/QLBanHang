@@ -11,13 +11,13 @@ namespace DAO
 {
     public class MatHang_DAO: DBConnection
     {
-        DBConnection con = new DBConnection();
+        DataProvider dataProvider = new DataProvider();
         MatHang obj_MH_DTO = new MatHang();
         
         public String Get_MaDVT(string str)
         {
             
-            obj_MH_DTO.MaDVT =con.LayDuLieu_String("select * from DVT where TenDVT = N'{0}'", str, "MaDVT");
+            obj_MH_DTO.MaDVT =dataProvider.layDuLieuString("select * from DVT where TenDVT = N'{0}'", str, "MaDVT");
             return obj_MH_DTO.MaDVT.ToString();
         }
         
@@ -41,25 +41,31 @@ namespace DAO
         }
         public DataTable Lay_Tatca_DVT()
         {
-            return con.Lay_TatCa_DuLieu("select * from DVT ORDER BY TenDVT ASC");
+            return dataProvider.layTatCaDuLieu("select * from DVT ORDER BY TenDVT ASC");
         }
         public DataTable Lay_Tat_Ca_Mat_Hang()
         {
-            return con.Lay_TatCa_DuLieu("select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT");
+            return dataProvider.layTatCaDuLieu("select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT");
         }
         public DataTable Lay_Mat_Hang_Tim_Kiem(string str)
         {
-            return con.Lay_TatCa_DuLieu_1ThamSo("select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT and TenMatHang = N'{0}'", str);
+            return dataProvider.layTatCaDuLieu("select distinct MaMatHang[Mã mặt hàng], TenMatHang[Tên mặt hàng], SoLuongTon[Số lượng tồn], TenDVT[Tên đơn vị tính], m.MaDVT [Mã đơn vị tính] from MATHANG m,DVT d where m.MaDVT = d.MaDVT and TenMatHang = N'{0}'", str);
         }
         public void Xoa_MatHang(string ma)
         {
-            con.Xoa_1thamSo("DELETE FROM MATHANG WHERE TenMatHang = N'{0}'", ma);
+            dataProvider.xoa("DELETE FROM MATHANG WHERE TenMatHang = N'{0}'", ma);
         }
 
         public String Lay_Ten_Mat_Hang(string str)
         {
             
-            return con.LayDuLieu_String("select * from MATHANG where TenMatHang = N'{0}'", str, "TenMatHang");
+            return dataProvider.layDuLieuString("select * from MATHANG where TenMatHang = N'{0}'", str, "TenMatHang");
+        }
+
+        public String Lay_MaMatHang(string str)
+        {
+
+            return dataProvider.layDuLieuString("select * from MATHANG where TenMatHang = N'{0}'", str, "MaMatHang");
         }
     }
 }

@@ -60,6 +60,7 @@
             this.cbSoPhieuNhapHang.Name = "cbSoPhieuNhapHang";
             this.cbSoPhieuNhapHang.Size = new System.Drawing.Size(121, 21);
             this.cbSoPhieuNhapHang.TabIndex = 1;
+            this.cbSoPhieuNhapHang.SelectedIndexChanged += new System.EventHandler(this.cbSoPhieuNhapHang_SelectedIndexChanged);
             // 
             // metroLabel2
             // 
@@ -77,6 +78,7 @@
             this.cbMaMatHang.Name = "cbMaMatHang";
             this.cbMaMatHang.Size = new System.Drawing.Size(121, 21);
             this.cbMaMatHang.TabIndex = 1;
+            this.cbMaMatHang.SelectedIndexChanged += new System.EventHandler(this.cbMaMatHang_SelectedIndexChanged);
             // 
             // metroLabel3
             // 
@@ -94,6 +96,7 @@
             this.tbSoLuongChuaNhap.MaxLength = 32767;
             this.tbSoLuongChuaNhap.Name = "tbSoLuongChuaNhap";
             this.tbSoLuongChuaNhap.PasswordChar = '\0';
+            this.tbSoLuongChuaNhap.ReadOnly = true;
             this.tbSoLuongChuaNhap.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSoLuongChuaNhap.SelectedText = "";
             this.tbSoLuongChuaNhap.Size = new System.Drawing.Size(315, 23);
@@ -162,6 +165,7 @@
             this.tbThanhTien.MaxLength = 32767;
             this.tbThanhTien.Name = "tbThanhTien";
             this.tbThanhTien.PasswordChar = '\0';
+            this.tbThanhTien.ReadOnly = true;
             this.tbThanhTien.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbThanhTien.SelectedText = "";
             this.tbThanhTien.Size = new System.Drawing.Size(315, 23);

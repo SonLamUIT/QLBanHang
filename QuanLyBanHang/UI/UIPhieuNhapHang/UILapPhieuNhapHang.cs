@@ -40,10 +40,14 @@ namespace UI.UIPhieuNhapHang
                 )
                 MessageBox.Show("Nhập lại thông tin chính xác!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
+            
                 if (daopnh.KiemTraSoPhieuNhapHangDaTonTai(tbSoPhieuNhapHang.Text.ToString()))
                     MessageBox.Show("Mã phiếu nhập hàng đã tồn tại!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
+                else                        
             {
+                string MaDoiTac = daopnh.LayMaDoiTac(cbSoDonDatHangNCC.Text.ToString());
+                daopnh.CapNhatTongNoDoiTac(MaDoiTac, Convert.ToInt64(tbThanhToan.Text.ToString()));
+
                 dtopnh.SoPNH = tbSoPhieuNhapHang.Text.ToString();
                 dtopnh.SoDDH_NCC = cbSoDonDatHangNCC.Text;
                 //dtopnh.TongTien = Convert.ToUInt64(tbTongTien.Text.ToString());
@@ -51,7 +55,7 @@ namespace UI.UIPhieuNhapHang
                 dtopnh.ThanhToan = Convert.ToInt64(tbThanhToan.Text.ToString());
                 //dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
                 
-                dtopnh.NgayNhap = datNgayNhap.Value.ToString("dd/MM/yyyy hh:mm:ss");
+                dtopnh.NgayNhap = datNgayNhap.Value.ToString("dd/mm/yyyy"); //"dd/MM/yyyy hh:mm:ss"
                 dtopnh.ConLai = dtopnh.TongTien - dtopnh.ThanhToan;
                 if (dtopnh.ConLai < 0)
                     dtopnh.ConLai = 0;
@@ -62,19 +66,7 @@ namespace UI.UIPhieuNhapHang
                 }
                 else
                     MessageBox.Show("Đã lập phiếu nhập hàng không thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-                
-
-
-
-                /*
-                string SoPhieuNhapHang = tbSoPhieuNhapHang.Text.ToString();
-                string SoDonDatHangNCC = tbSoDonDatHangNCC.Text.ToString();
-                string NgayNhap = datNgayNhap.Text.ToString();
-                ulong TongTien = Convert.ToUInt64(tbTongTien.Text.ToString());
-                ulong ThanhToan = Convert.ToUInt64(tbThanhToan.Text.ToString());
-                ulong ConLai = Convert.ToUInt64(tbConLai.Text.ToString()); 
-                */
+            }    
         }
 
         private void UILapPhieuNhapHang_Load(object sender, EventArgs e)

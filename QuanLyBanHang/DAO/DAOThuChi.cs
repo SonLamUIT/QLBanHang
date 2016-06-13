@@ -42,7 +42,7 @@ namespace DAO
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand(string.Format("insert into PHIEUTHUCHI values ('{0}','{1}','{2}',{3},{4},'{5}')", ptc.SoPTC, ptc.NgayLap, ptc.MaDoiTac, ptc.TongNo, ptc.SoTien, ptc.LaPhieuThuHayChi), conn);
+                SqlCommand cmd = new SqlCommand(string.Format("ThemPhieuThuChi '{0}', '{1}', '{2}', {3}, {4}",ptc.SoPTC, ptc.NgayLap, ptc.MaDoiTac, ptc.TongNo, ptc.SoTien), conn);
                 cmd.ExecuteNonQuery();
                 SqlCommand cmd1 = new SqlCommand(string.Format("select * from PHIEUTHUCHI where SoPTC='{0}'", ptc.SoPTC), conn);
                 cmd1.ExecuteNonQuery();      
@@ -58,6 +58,28 @@ namespace DAO
             }
             return false;
         }
+        public string LayTongNoDoiTac(string MaDoiTac)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("select SoTienNo from DOITAC where MaDoiTac='{0}'",MaDoiTac), conn);
+                cmd.ExecuteNonQuery();                              
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                return Convert.ToString(dt.Rows[0][0]);                              
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return null;
+        }
         public DataTable LayDanhSachDoiTac()
         {
             try
@@ -67,18 +89,40 @@ namespace DAO
                     conn.Open();
                 }
                 SqlCommand cmd = new SqlCommand(string.Format("select MaDoiTac from DOITAC"), conn);
-                cmd.ExecuteNonQuery();                              
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
-                return dt;                
+                return dt;
             }
             catch (Exception)
             {
                 conn.Close();
             }
             return null;
-        }        
+        }
+        public bool KiemTraLoaiDoiTacLaNCCHayKhacHang(string MaDoiTac)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format("select dt.MaLoaiDoiTac from DOITAC dt,LOAIDOITAC ldt where dt.MaLoaiDoiTac=ldt.MaLoaiDoiTac and dt.MaDoiTac='{0}'", MaDoiTac), conn);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt.Rows[0][0].ToString() == "NCC") return true;               
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return false;         
+        }
     }
 }

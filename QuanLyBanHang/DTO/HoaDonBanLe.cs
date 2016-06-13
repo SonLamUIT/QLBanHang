@@ -9,17 +9,17 @@ namespace DTO
     public class HoaDonBanLe
     {
         public string SoHD { get; set; }
-        public string MaDoiTac { get; set; }
+        public string TenKH { get; set; }
         public DateTime NgayLap { get; set; }
         public double TongThanhTien { get; set; }
         public HoaDonBanLe()
         {
 
         }
-        public HoaDonBanLe(string so, string ma, DateTime ngaylap, double tong)
+        public HoaDonBanLe(string so, string ten, DateTime ngaylap, double tong)
         {
             SoHD = so;
-            MaDoiTac = ma;
+            TenKH = ten;
             NgayLap = ngaylap;
             TongThanhTien = tong;
         }
