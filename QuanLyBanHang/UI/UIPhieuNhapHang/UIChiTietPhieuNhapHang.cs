@@ -13,12 +13,12 @@ namespace UI.UIPhieuNhapHang
 {
     public partial class UIChiTietPhieuNhapHang : MetroFramework.Forms.MetroForm
     {
-        DBConnection db;
+        DataProvider dp;
         public UIChiTietPhieuNhapHang()
         {
-            db = new DBConnection();
+            dp = new DataProvider();
             InitializeComponent();
-            dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachChiTietPhieuNhapHang");
+            dgvDanhSachChiTietPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachChiTietPhieuNhapHang");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace DAO
     public class DBConnection
     {
         public static SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=QuanLyBanHang;Integrated Security=True");
-        public string LayDuLieu_String(string function, string thamso, string ketqua)
+        /* public string LayDuLieu_String(string function, string thamso, string ketqua)
         {
             try
             {
@@ -115,7 +115,6 @@ namespace DAO
                 conn.Close();
             }  
             return false;         
-        }
-     
+        }  */
     }
 }

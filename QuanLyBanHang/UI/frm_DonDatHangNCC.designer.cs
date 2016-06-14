@@ -39,6 +39,7 @@
             this.cl_TenMH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cl_SoLuongDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_SoLuongDaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Thoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrid_mathang)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             // 
             this.btnTimkiem.BackColor = System.Drawing.SystemColors.Menu;
             this.btnTimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimkiem.Location = new System.Drawing.Point(591, 148);
+            this.btnTimkiem.Location = new System.Drawing.Point(480, 148);
             this.btnTimkiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(100, 28);
@@ -111,7 +112,7 @@
             // 
             this.btn_them.BackColor = System.Drawing.SystemColors.Menu;
             this.btn_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_them.Location = new System.Drawing.Point(483, 148);
+            this.btn_them.Location = new System.Drawing.Point(372, 148);
             this.btn_them.Margin = new System.Windows.Forms.Padding(4);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(100, 28);
@@ -157,11 +158,25 @@
             this.cl_SoLuongDaNhap.Name = "cl_SoLuongDaNhap";
             this.cl_SoLuongDaNhap.ReadOnly = true;
             // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.BackColor = System.Drawing.SystemColors.Menu;
+            this.btn_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Thoat.Location = new System.Drawing.Point(588, 148);
+            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(100, 28);
+            this.btn_Thoat.TabIndex = 27;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.UseVisualStyleBackColor = false;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
+            // 
             // frm_DonDatHangNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 542);
+            this.Controls.Add(this.btn_Thoat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btn_them);
@@ -188,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoLuongDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoLuongDaNhap;
         private System.Windows.Forms.DateTimePicker dtime_NgayLap;
+        private System.Windows.Forms.Button btn_Thoat;
     }
 }

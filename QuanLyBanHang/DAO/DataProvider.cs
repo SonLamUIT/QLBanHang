@@ -41,7 +41,6 @@ namespace DAO
                 }
                 SqlCommand cmd = new SqlCommand(function, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
@@ -63,7 +62,6 @@ namespace DAO
                 }
                 SqlCommand cmd = new SqlCommand(string.Format(function, thamso), conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
@@ -333,5 +331,46 @@ namespace DAO
             }
             return false;
         }
+        public bool KiemTraDuLieuTonTai_1ThamSo(string proc, string var)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(String.Format(proc, var), conn);
+                cmd.ExecuteReader();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                if (dt != null) return true;
+            }
+            catch (Exception)
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool Xoa_1thamSo(string fuction, string thamso)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmd = new SqlCommand(string.Format(fuction, thamso), conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                conn.Close();
+                return false;
+            }
+        }       
     }
 }

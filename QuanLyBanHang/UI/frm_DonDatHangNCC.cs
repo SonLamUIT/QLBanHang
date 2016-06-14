@@ -139,21 +139,22 @@ namespace UI
         {
 
         }
-
         private void dtgrid_mathang_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void dtgrid_mathang_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["cl_SoLuongDaNhap"].Value = 0;
         }
-
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             frm_TimKiemDonDatHangNCC f = new frm_TimKiemDonDatHangNCC(cbx_NCC.SelectedIndex);
             f.ShowDialog();
+        }
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

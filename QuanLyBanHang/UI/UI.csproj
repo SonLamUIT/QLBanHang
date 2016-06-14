@@ -95,6 +95,12 @@
     <Compile Include="frmPhucHoiDuLieu.designer.cs">
       <DependentUpon>frmPhucHoiDuLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaoLuu.designer.cs">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_BaoCaoCongNoKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="frm_DoiTac.Designer.cs">
       <DependentUpon>frm_DoiTac.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DonDatHang.Designer.cs">
+      <DependentUpon>frm_DonDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_DonDatHangKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,18 @@
     </Compile>
     <Compile Include="frm_DonDatHangNCC.designer.cs">
       <DependentUpon>frm_DonDatHangNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_GioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GioiThieu.Designer.cs">
+      <DependentUpon>frm_GioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HeTHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HeTHong.Designer.cs">
+      <DependentUpon>frm_HeTHong.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_HoaDonBanLe.cs">
       <SubType>Form</SubType>
@@ -148,12 +172,6 @@
     </Compile>
     <Compile Include="frm_PhieuGiaoHang.Designer.cs">
       <DependentUpon>frm_PhieuGiaoHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_SaoLuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_SaoLuu.Designer.cs">
-      <DependentUpon>frm_SaoLuu.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ThayDoiQuyDinh.cs">
       <SubType>Form</SubType>
@@ -193,6 +211,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIPhieuNhapHang\frm_ChiTietPhieuNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\frm_ChiTietPhieuNhapHang.Designer.cs">
+      <DependentUpon>frm_ChiTietPhieuNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\frm_Panel_PhieuNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuNhapHang\frm_Panel_PhieuNhapHang.Designer.cs">
+      <DependentUpon>frm_Panel_PhieuNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIPhieuNhapHang\UIChiTietPhieuNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +252,12 @@
     </Compile>
     <Compile Include="UIPhieuNhapHang\UISuaPhieuNhapHang.Designer.cs">
       <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIPhieuThuChi\frm_ThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIPhieuThuChi\frm_ThuChi.Designer.cs">
+      <DependentUpon>frm_ThuChi.cs</DependentUpon>
     </Compile>
     <Compile Include="UIPhieuThuChi\UIDanhSachDoiTac.cs">
       <SubType>Form</SubType>
@@ -254,6 +290,9 @@
     <EmbeddedResource Include="frmPhucHoiDuLieu.resx">
       <DependentUpon>frmPhucHoiDuLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSaoLuu.resx">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_BaoCaoCongNoKH.resx">
       <DependentUpon>frm_BaoCaoCongNoKH.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,11 +302,20 @@
     <EmbeddedResource Include="frm_DoiTac.resx">
       <DependentUpon>frm_DoiTac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_DonDatHang.resx">
+      <DependentUpon>frm_DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_DonDatHangKH.resx">
       <DependentUpon>frm_DonDatHangKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DonDatHangNCC.resx">
       <DependentUpon>frm_DonDatHangNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_GioiThieu.resx">
+      <DependentUpon>frm_GioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HeTHong.resx">
+      <DependentUpon>frm_HeTHong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_HoaDonBanLe.resx">
       <DependentUpon>frm_HoaDonBanLe.cs</DependentUpon>
@@ -309,6 +357,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UIPhieuNhapHang\frm_ChiTietPhieuNhapHang.resx">
+      <DependentUpon>frm_ChiTietPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuNhapHang\frm_Panel_PhieuNhapHang.resx">
+      <DependentUpon>frm_Panel_PhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuNhapHang\UIChiTietPhieuNhapHang.resx">
       <DependentUpon>UIChiTietPhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuNhapHang\UISuaPhieuNhapHang.resx">
       <DependentUpon>UISuaPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIPhieuThuChi\frm_ThuChi.resx">
+      <DependentUpon>frm_ThuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIPhieuThuChi\UIDanhSachDoiTac.resx">
       <DependentUpon>UIDanhSachDoiTac.cs</DependentUpon>

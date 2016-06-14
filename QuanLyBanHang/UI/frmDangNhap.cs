@@ -40,10 +40,10 @@ namespace UI
             }
             if (dangnhapquyenadminbus.DangNhap_Select_DAO(tbxTenDangNhap.Text.ToString(), tbxMatKhau.Text.ToString()))
             {
-                this.Hide();
+                Hide();
                 Panel f = new Panel();
                 f.ShowDialog();
-                this.Close();
+                Close();
             }
             else
             {

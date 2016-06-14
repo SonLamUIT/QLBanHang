@@ -23,7 +23,7 @@ namespace UI.UIPhieuNhapHang
 
         private void UIDanhSachMatHang_Load(object sender, EventArgs e)
         {
-            dgvDanhSachMatHang.DataSource = daopnh.Lay_TatCa_DuLieu("SELECT * FROM dbo.MATHANG order by MaMatHang asc");
+            dgvDanhSachMatHang.DataSource = daopnh.layTatCaDuLieu("SELECT * FROM dbo.MATHANG order by MaMatHang asc");
         }
     }
 }

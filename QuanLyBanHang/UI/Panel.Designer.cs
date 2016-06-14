@@ -38,7 +38,8 @@
             this.mttDonDatHang = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTileItem11 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.mttQuyDinh = new DevComponents.DotNetBar.Metro.MetroTileItem();
-            this.metroTileItem13 = new DevComponents.DotNetBar.Metro.MetroTileItem();
+            this.mttGioiThieu = new DevComponents.DotNetBar.Metro.MetroTileItem();
+            this.mttHeThong = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTileItem8 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTilePanel1 = new DevComponents.DotNetBar.Metro.MetroTilePanel();
             this.metroTileItem6 = new DevComponents.DotNetBar.Metro.MetroTileItem();
@@ -48,7 +49,7 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.metroTileItem1 = new DevComponents.DotNetBar.Metro.MetroTileItem();
+            this.mttDangXuat = new DevComponents.DotNetBar.Metro.MetroTileItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,8 +70,9 @@
             this.mttDonDatHang,
             this.metroTileItem11,
             this.mttQuyDinh,
-            this.metroTileItem13,
-            this.metroTileItem1});
+            this.mttGioiThieu,
+            this.mttHeThong,
+            this.mttDangXuat});
             // 
             // 
             // 
@@ -88,10 +90,10 @@
             // 
             // 
             this.mttPhieuNhapHang.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.mttPhieuNhapHang.TitleText = "Phiếu Nhập Hàng";
+            this.mttPhieuNhapHang.TitleText = "Phiếu Nhập hàng";
             this.mttPhieuNhapHang.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
-            this.mttPhieuNhapHang.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mttPhieuNhapHang.Click += new System.EventHandler(this.metroTileItem1_Click);
+            this.mttPhieuNhapHang.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttPhieuNhapHang.Click += new System.EventHandler(this.mttPhieuNhapHang_Click);
             // 
             // mttThuChi
             // 
@@ -109,13 +111,14 @@
             this.mttThuChi.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
             this.mttThuChi.TitleTextColor = System.Drawing.Color.White;
             this.mttThuChi.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttThuChi.Click += new System.EventHandler(this.mttThuChi_Click);
             // 
             // mttDoiTac
             // 
             this.mttDoiTac.Image = ((System.Drawing.Image)(resources.GetObject("mttDoiTac.Image")));
             this.mttDoiTac.Name = "mttDoiTac";
             this.mttDoiTac.SymbolColor = System.Drawing.Color.Empty;
-            this.mttDoiTac.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Olive;
+            this.mttDoiTac.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Green;
             this.mttDoiTac.TileSize = new System.Drawing.Size(150, 150);
             // 
             // 
@@ -206,21 +209,37 @@
             this.mttQuyDinh.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mttQuyDinh.Click += new System.EventHandler(this.mttQuyDinh_Click);
             // 
-            // metroTileItem13
+            // mttGioiThieu
             // 
-            this.metroTileItem13.Image = ((System.Drawing.Image)(resources.GetObject("metroTileItem13.Image")));
-            this.metroTileItem13.Name = "metroTileItem13";
-            this.metroTileItem13.SymbolColor = System.Drawing.Color.Empty;
-            this.metroTileItem13.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Magenta;
-            this.metroTileItem13.TileSize = new System.Drawing.Size(150, 150);
+            this.mttGioiThieu.Image = ((System.Drawing.Image)(resources.GetObject("mttGioiThieu.Image")));
+            this.mttGioiThieu.Name = "mttGioiThieu";
+            this.mttGioiThieu.SymbolColor = System.Drawing.Color.Empty;
+            this.mttGioiThieu.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Magenta;
+            this.mttGioiThieu.TileSize = new System.Drawing.Size(150, 150);
             // 
             // 
             // 
-            this.metroTileItem13.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTileItem13.TitleText = "Giới Thiệu";
-            this.metroTileItem13.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
-            this.metroTileItem13.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTileItem13.Click += new System.EventHandler(this.metroTileItem13_Click);
+            this.mttGioiThieu.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.mttGioiThieu.TitleText = "Giới Thiệu";
+            this.mttGioiThieu.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.mttGioiThieu.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttGioiThieu.Click += new System.EventHandler(this.mttGioiThieu_Click);
+            // 
+            // mttHeThong
+            // 
+            this.mttHeThong.Image = ((System.Drawing.Image)(resources.GetObject("mttHeThong.Image")));
+            this.mttHeThong.Name = "mttHeThong";
+            this.mttHeThong.SymbolColor = System.Drawing.Color.Empty;
+            this.mttHeThong.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal;
+            this.mttHeThong.TileSize = new System.Drawing.Size(150, 150);
+            // 
+            // 
+            // 
+            this.mttHeThong.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.mttHeThong.TitleText = "Hệ Thống";
+            this.mttHeThong.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.mttHeThong.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttHeThong.Click += new System.EventHandler(this.mttHeThong_Click);
             // 
             // metroTileItem8
             // 
@@ -330,20 +349,21 @@
             this.labelX3.TabIndex = 3;
             this.labelX3.Text = "ver. 1.13.06.2016";
             // 
-            // metroTileItem1
+            // mttDangXuat
             // 
-            this.metroTileItem1.Image = ((System.Drawing.Image)(resources.GetObject("metroTileItem1.Image")));
-            this.metroTileItem1.Name = "metroTileItem1";
-            this.metroTileItem1.SymbolColor = System.Drawing.Color.Empty;
-            this.metroTileItem1.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Teal;
-            this.metroTileItem1.TileSize = new System.Drawing.Size(150, 150);
+            this.mttDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("mttDangXuat.Image")));
+            this.mttDangXuat.Name = "mttDangXuat";
+            this.mttDangXuat.SymbolColor = System.Drawing.Color.Empty;
+            this.mttDangXuat.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Plum;
+            this.mttDangXuat.TileSize = new System.Drawing.Size(150, 150);
             // 
             // 
             // 
-            this.metroTileItem1.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTileItem1.TitleText = "Hệ Thống";
-            this.metroTileItem1.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
-            this.metroTileItem1.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttDangXuat.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.mttDangXuat.TitleText = "Đăng Xuất";
+            this.mttDangXuat.TitleTextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.mttDangXuat.TitleTextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mttDangXuat.Click += new System.EventHandler(this.mttDangXuat_Click);
             // 
             // Panel
             // 
@@ -358,10 +378,10 @@
             this.Controls.Add(this.metroTilePanel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Panel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -378,7 +398,7 @@
         private DevComponents.DotNetBar.Metro.MetroTileItem mttDonDatHang;
         private DevComponents.DotNetBar.Metro.MetroTileItem metroTileItem11;
         private DevComponents.DotNetBar.Metro.MetroTileItem mttQuyDinh;
-        private DevComponents.DotNetBar.Metro.MetroTileItem metroTileItem13;
+        private DevComponents.DotNetBar.Metro.MetroTileItem mttGioiThieu;
         private DevComponents.DotNetBar.Metro.MetroTileItem metroTileItem8;
         private DevComponents.DotNetBar.Metro.MetroTilePanel metroTilePanel1;
         private DevComponents.DotNetBar.Metro.MetroTileItem metroTileItem6;
@@ -388,6 +408,7 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Metro.MetroTileItem metroTileItem1;
+        private DevComponents.DotNetBar.Metro.MetroTileItem mttHeThong;
+        private DevComponents.DotNetBar.Metro.MetroTileItem mttDangXuat;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.cbSoPhieuNhapHang = new System.Windows.Forms.ComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.cbMaMatHang = new System.Windows.Forms.ComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -42,6 +41,7 @@
             this.tbThanhTien = new MetroFramework.Controls.MetroTextBox();
             this.btLuu = new MetroFramework.Controls.MetroButton();
             this.btDanhSachMatHang = new MetroFramework.Controls.MetroButton();
+            this.tbSoPhieuNhapHang = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -52,15 +52,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(131, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Số Phiếu Nhập Hàng";
-            // 
-            // cbSoPhieuNhapHang
-            // 
-            this.cbSoPhieuNhapHang.FormattingEnabled = true;
-            this.cbSoPhieuNhapHang.Location = new System.Drawing.Point(188, 63);
-            this.cbSoPhieuNhapHang.Name = "cbSoPhieuNhapHang";
-            this.cbSoPhieuNhapHang.Size = new System.Drawing.Size(121, 21);
-            this.cbSoPhieuNhapHang.TabIndex = 1;
-            this.cbSoPhieuNhapHang.SelectedIndexChanged += new System.EventHandler(this.cbSoPhieuNhapHang_SelectedIndexChanged);
             // 
             // metroLabel2
             // 
@@ -192,11 +183,25 @@
             this.btDanhSachMatHang.UseSelectable = true;
             this.btDanhSachMatHang.Click += new System.EventHandler(this.btDanhSachMatHang_Click);
             // 
+            // tbSoPhieuNhapHang
+            // 
+            this.tbSoPhieuNhapHang.Lines = new string[0];
+            this.tbSoPhieuNhapHang.Location = new System.Drawing.Point(188, 56);
+            this.tbSoPhieuNhapHang.MaxLength = 32767;
+            this.tbSoPhieuNhapHang.Name = "tbSoPhieuNhapHang";
+            this.tbSoPhieuNhapHang.PasswordChar = '\0';
+            this.tbSoPhieuNhapHang.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSoPhieuNhapHang.SelectedText = "";
+            this.tbSoPhieuNhapHang.Size = new System.Drawing.Size(315, 23);
+            this.tbSoPhieuNhapHang.TabIndex = 8;
+            this.tbSoPhieuNhapHang.UseSelectable = true;
+            // 
             // UILapChiTietPhieuNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 281);
+            this.Controls.Add(this.tbSoPhieuNhapHang);
             this.Controls.Add(this.btDanhSachMatHang);
             this.Controls.Add(this.btLuu);
             this.Controls.Add(this.metroLabel6);
@@ -209,7 +214,6 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.cbMaMatHang);
-            this.Controls.Add(this.cbSoPhieuNhapHang);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
             this.Name = "UILapChiTietPhieuNhapHang";
@@ -223,7 +227,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.ComboBox cbSoPhieuNhapHang;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.ComboBox cbMaMatHang;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -236,5 +239,6 @@
         private MetroFramework.Controls.MetroTextBox tbThanhTien;
         private MetroFramework.Controls.MetroButton btLuu;
         private MetroFramework.Controls.MetroButton btDanhSachMatHang;
+        private MetroFramework.Controls.MetroTextBox tbSoPhieuNhapHang;
     }
 }

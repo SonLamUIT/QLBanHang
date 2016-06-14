@@ -29,7 +29,7 @@ namespace UI.BaoCao
         }
         private void btXuatBaoCao_Click(object sender, EventArgs e)
         {
-            dgvBaoCao.DataSource = daobc.Lay_TatCa_DuLieu(string.Format("exec BaoCaoLoiNhuanTheoMatHangTheoThoiGian '{0}'", datNgayLap.Value.ToString("dd/mm/yyyy")));
+            dgvBaoCao.DataSource = daobc.layTatCaDuLieu(string.Format("exec BaoCaoLoiNhuanTheoMatHangTheoThoiGian '{0}'", datNgayLap.Value.ToString("dd/mm/yyyy")));
             daobc.ThuThiQuerry(datNgayLap.Value.ToString("dd/mm/yyyy"));
             ReportDocument crystalReport = new ReportDocument();
             crystalReport.Load(@"D:\Term VI\Phân tích thiết kế hệ thống\QLBanHang\QuanLyBanHang\UI\BaoCao\CRBaoCaoDoanhThu.rpt");

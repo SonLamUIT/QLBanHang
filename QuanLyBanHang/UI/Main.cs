@@ -16,7 +16,7 @@ namespace UI
     {
         
 
-        DBConnection db;
+        DataProvider dp;
         public static bool IsNumeric(object Expression)
         {
             double retNum;
@@ -25,17 +25,17 @@ namespace UI
         }
         public Main()
         {
-            db = new DBConnection();
+            dp = new DataProvider();
             InitializeComponent();
             
         }
         private void btCapNhatDanhSachPhieuNhapHang_Click(object sender, EventArgs e)
         {
-            dgvDanhSachPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
+            dgvDanhSachPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachPhieuNhapHang");
         }
         private void btCapNhatDanhSachChiTietPhieuNhapHang_Click(object sender, EventArgs e)
         {
-            dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachChiTietPhieuNhapHang");
+            dgvDanhSachChiTietPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachChiTietPhieuNhapHang");
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -47,22 +47,20 @@ namespace UI
         {
             UI.UIPhieuNhapHang.UILapPhieuNhapHang lpnh = new UIPhieuNhapHang.UILapPhieuNhapHang();
             lpnh.ShowDialog();
-            dgvDanhSachPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
+            dgvDanhSachPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachPhieuNhapHang");
         }
 
         private void btThemChiTietPhieuNhapHang_Click(object sender, EventArgs e)
         {
-            UI.UIPhieuNhapHang.UILapChiTietPhieuNhapHang lctpnh = new UIPhieuNhapHang.UILapChiTietPhieuNhapHang();
-            lctpnh.ShowDialog();
-            dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("SELECT * FROM DBO.CT_PNH");
+
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             //nạp dữ liệu lúc chương trình khởi động, dữ liệu bao gồm các bảng lưu trong cơ sở dữ liệu
-            dgvDanhSachPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
-            dgvDanhSachChiTietPhieuNhapHang.DataSource = db.Lay_TatCa_DuLieu("exec LayDanhSachChiTietPhieuNhapHang");
-            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+            dgvDanhSachPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachPhieuNhapHang");
+            dgvDanhSachChiTietPhieuNhapHang.DataSource = dp.layTatCaDuLieu("exec LayDanhSachChiTietPhieuNhapHang");
+            dgvThuChi.DataSource = dp.layTatCaDuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         
         }
 
@@ -90,20 +88,20 @@ namespace UI
                 UI.UIPhieuNhapHang.UISuaPhieuNhapHang spnh = new UIPhieuNhapHang.UISuaPhieuNhapHang(dtopnh);
                 spnh.ShowDialog();
             }
-            dgvDanhSachPhieuNhapHang.DataSource= db.Lay_TatCa_DuLieu("exec LayDanhSachPhieuNhapHang");
+            dgvDanhSachPhieuNhapHang.DataSource= dp.layTatCaDuLieu("exec LayDanhSachPhieuNhapHang");
         }
 
         //cập nhật danh sách phiếu thu chi
         private void btCapNhatPhieuThuChi_Click(object sender, EventArgs e)
         {
-            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+            dgvThuChi.DataSource = dp.layTatCaDuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
 
         private void btThemPhieuThuChi_Click(object sender, EventArgs e)
         {
             UI.UIPhieuThuChi.UILapPhieuThuChi uilptc = new UIPhieuThuChi.UILapPhieuThuChi();
             uilptc.ShowDialog();
-            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+            dgvThuChi.DataSource = dp.layTatCaDuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -113,20 +111,25 @@ namespace UI
         }
         private void btCapNhatThuChi_Click(object sender, EventArgs e)
         {
-            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+            dgvThuChi.DataSource = dp.layTatCaDuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
 
         private void btThemThuChi_Click(object sender, EventArgs e)
         {
             UI.UIPhieuThuChi.UILapPhieuThuChi uilptc = new UIPhieuThuChi.UILapPhieuThuChi();
             uilptc.ShowDialog();
-            dgvThuChi.DataSource = db.Lay_TatCa_DuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
+            dgvThuChi.DataSource = dp.layTatCaDuLieu("SELECT SoPTC [Số Phiếu Thu Chi],NgayLap [Ngày Lập], MaDoiTac [Mã Đối Tác], TongNo [Tổng Nợ], SoTien [Số Tiền] FROM PHIEUTHUCHI");
         }
 
         private void btBaoCaoDoanhThuTheoMatHang_Click(object sender, EventArgs e)
         {
             UI.BaoCao.BaoCaoDoanhThuTheoMatHang bcdttmh = new BaoCao.BaoCaoDoanhThuTheoMatHang();
             bcdttmh.ShowDialog();
+        }
+
+        private void dgvDanhSachChiTietPhieuNhapHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

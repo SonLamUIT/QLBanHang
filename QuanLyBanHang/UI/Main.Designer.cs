@@ -121,7 +121,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage9);
             this.metroTabControl2.Location = new System.Drawing.Point(3, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 1;
             this.metroTabControl2.Size = new System.Drawing.Size(958, 439);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -268,6 +268,7 @@
             this.dgvDanhSachChiTietPhieuNhapHang.Name = "dgvDanhSachChiTietPhieuNhapHang";
             this.dgvDanhSachChiTietPhieuNhapHang.Size = new System.Drawing.Size(752, 398);
             this.dgvDanhSachChiTietPhieuNhapHang.TabIndex = 5;
+            this.dgvDanhSachChiTietPhieuNhapHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachChiTietPhieuNhapHang_CellContentClick);
             // 
             // metroTabPage4
             // 

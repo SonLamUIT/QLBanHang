@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAO
 {
-    public class DAOBaoCao: DBConnection
+    public class DAOBaoCao: DataProvider
     {
         //INSERT INTO BaoCaoDoanhThuTheoMatHang  Exec BaoCaoLoiNhuanTheoMatHangTheoThoiGian '11/01/2016'
         public void ThuThiQuerry(string date)

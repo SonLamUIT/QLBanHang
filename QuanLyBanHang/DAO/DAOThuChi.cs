@@ -8,7 +8,7 @@ using System.Data;
 using DTO;
 namespace DAO
 {
-    public class DAOThuChi: DBConnection
+    public class DAOThuChi: DataProvider        
     {
         public bool KiemTraSoPhieuThuChiDaTonTai(string var)
         {

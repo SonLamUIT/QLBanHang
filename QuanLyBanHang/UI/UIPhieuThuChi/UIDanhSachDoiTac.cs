@@ -15,15 +15,17 @@ namespace UI.UIPhieuThuChi
     public partial class UIDanhSachDoiTac : MetroFramework.Forms.MetroForm
     {
         DAOThuChi daotc;
+        
         public UIDanhSachDoiTac()
         {
             InitializeComponent();
             daotc = new DAOThuChi();
+            
         }
 
         private void UIDanhSachDoiTac_Load(object sender, EventArgs e)
         {
-            dgvDanhSachDoiTac.DataSource = daotc.Lay_TatCa_DuLieu("SELECT MaDoiTac [Mã Đối Tác], TenDoiTac [Tên Đối Tác],MaLoaiDoiTac [Mã Loại Đốc Tác], SDT [Số Điện Thoại], DiaChi [Địa Chỉ], SoTienNo [Số Tiền Nợ] FROM DOITAC");
+            dgvDanhSachDoiTac.DataSource = daotc.layTatCaDuLieu("SELECT MaDoiTac [Mã Đối Tác], TenDoiTac [Tên Đối Tác],MaLoaiDoiTac [Mã Loại Đốc Tác], SDT [Số Điện Thoại], DiaChi [Địa Chỉ], SoTienNo [Số Tiền Nợ] FROM DOITAC");
         }
     }
 }

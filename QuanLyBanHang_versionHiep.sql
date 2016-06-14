@@ -282,3 +282,31 @@ begin
 	where pnh.SoPNH=ctpnh.SoPNH and ctpnh.SoPNH=@SoPNH
 end
 
+create table LichSuDuLieu
+(
+	ThoiGian varchar(50) primary key,
+	SuKien nvarchar(200)
+)
+
+--bảng danh sách tài khoản
+create table TaiKhoan
+(
+	TenDangNhap nvarchar(50) primary key,
+	MatKhau nvarchar(50)
+)
+
+--proc kiểm tra đăng nhập hợp lệ
+create proc KiemTraDangNhap
+@TenDangNhap nvarchar(50),
+@MatKhau nvarchar(50)
+as
+begin
+	select * from TaiKhoan where TenDangNhap=@TenDangNhap and MatKhau=@MatKhau
+end
+
+--thêm dữ liệu vào bảng tài khoản 
+insert into TaiKhoan values('admin','admin')
+
+--exec KiemTraDangNhap 'admin','admin'
+
+insert into LichSuDuLieu values ('admin','{1}')

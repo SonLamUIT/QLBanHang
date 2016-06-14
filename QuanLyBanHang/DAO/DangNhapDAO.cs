@@ -19,12 +19,17 @@ namespace DAO
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand(string.Format("exec kiemtrapass '{0}','{1}'", TenTaiKhoan, MatKhau), conn);
+                SqlCommand cmd = new SqlCommand(string.Format("exec KiemTraDangNhap '{0}','{1}'", TenTaiKhoan, MatKhau), conn);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                if (dt.Rows.Count > 0) return true;
+                if (dt.Rows.Count > 0)
+                {                    
+                    SqlCommand cmd1 = new SqlCommand(string.Format("insert into LichSuDuLieu values ('{0}',N'{1}')", DateTime.Now.ToString("dd/mm/yyyy HH:mm"), TenTaiKhoan + " đã đăng nhập."), conn);
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
                 conn.Close();
                 return false;
             }

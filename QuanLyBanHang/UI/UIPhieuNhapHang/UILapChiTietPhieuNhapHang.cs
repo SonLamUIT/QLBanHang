@@ -16,25 +16,22 @@ namespace UI.UIPhieuNhapHang
     {
         DAOPhieuNhapHang daopnh;
         CT_PNH ctpnh;
-        public UILapChiTietPhieuNhapHang()
+        string SoPhieuNhapHang;
+        public UILapChiTietPhieuNhapHang(string SoPhieuNhapHang)
         {
             InitializeComponent();
             daopnh = new DAOPhieuNhapHang();
             ctpnh = new CT_PNH();
+            this.SoPhieuNhapHang = SoPhieuNhapHang;
         }
-
         private void UILapChiTietPhieuNhapHang_Load(object sender, EventArgs e)
         {
-            cbSoPhieuNhapHang.DataSource = daopnh.LayDanhSachSoPhieuNhapHang();
-            cbSoPhieuNhapHang.DisplayMember = "SoPNH";
-            cbSoPhieuNhapHang.ValueMember = "SoPNH";
+            tbSoPhieuNhapHang.Text = this.SoPhieuNhapHang;
             cbMaMatHang.DataSource = daopnh.LayDanhSachMaMatHang();
             cbMaMatHang.DisplayMember = "MaMatHang";
             cbMaMatHang.ValueMember = "MaMatHang";
-            cbMaMatHang.SelectedIndex = -1;
-            cbSoPhieuNhapHang.SelectedIndex = -1;
+            cbMaMatHang.SelectedIndex = -1;            
         }
-
         private void btLuu_Click(object sender, EventArgs e)
         {
             if (Convert.ToUInt64(tbDonGiaNhap.Text) < 0 ||
@@ -43,13 +40,12 @@ namespace UI.UIPhieuNhapHang
                 tbDonGiaNhap.Text.ToString() == "" ||
                 //tbSoLuongChuaNhap.Text.ToString() == "" ||
                 tbSoLuongNhap.Text.ToString() == "" ||
-                cbMaMatHang.Text == "" ||
-                cbSoPhieuNhapHang.Text == ""
+                cbMaMatHang.Text == ""               
                 )
                 MessageBox.Show("Dữ liệu không đúng đắn, mời nhập lại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                ctpnh.SoPNH = cbSoPhieuNhapHang.Text.ToString();
+                ctpnh.SoPNH = tbSoPhieuNhapHang.Text.ToString();
                 ctpnh.MaMatHang = cbMaMatHang.Text.ToString();
                 ctpnh.SoLuongChuaNhap = Convert.ToInt32(tbSoLuongChuaNhap.Text.ToString())- Convert.ToInt32(tbSoLuongNhap.Text.ToString());
                 ctpnh.SoLuongNhap = Convert.ToInt32(tbSoLuongNhap.Text.ToString());
@@ -66,39 +62,29 @@ namespace UI.UIPhieuNhapHang
                     MessageBox.Show("Thêm chi tiết phiếu nhập hàng " + ctpnh.SoPNH + " không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                 }
-                daopnh.CapNhatSoLuongNhap(daopnh.LaySoDDH_NCC(cbSoPhieuNhapHang.Text.ToString()), cbMaMatHang.Text, tbSoLuongNhap.Text.ToString());       
+                daopnh.CapNhatSoLuongNhap(daopnh.LaySoDDH_NCC(tbSoPhieuNhapHang.Text.ToString()), cbMaMatHang.Text, tbSoLuongNhap.Text.ToString());       
                 
             }
         }
-
         private void btDanhSachMatHang_Click(object sender, EventArgs e)
         {
             UIDanhSachMatHang dsmh = new UIDanhSachMatHang();
             dsmh.ShowDialog();
         }
-
         private void tbDonGiaNhap_TextChanged(object sender, EventArgs e)
         {
             if (tbSoLuongNhap.Text.ToString() != "" && tbDonGiaNhap.Text.ToString() != "" && Main.IsNumeric(tbSoLuongNhap.Text.ToString()) && Main.IsNumeric(tbDonGiaNhap.Text.ToString()))
                 tbThanhTien.Text = Convert.ToString(Convert.ToUInt64(tbSoLuongNhap.Text) * Convert.ToUInt64(tbDonGiaNhap.Text));
         }
-
         private void tbSoLuongNhap_TextChanged(object sender, EventArgs e)
         {
             if (tbSoLuongNhap.Text.ToString() != "" && tbDonGiaNhap.Text.ToString() != "" && Main.IsNumeric(tbSoLuongNhap.Text.ToString()) && Main.IsNumeric(tbDonGiaNhap.Text.ToString()))
                 tbThanhTien.Text = Convert.ToString(Convert.ToUInt64(tbSoLuongNhap.Text) * Convert.ToUInt64(tbDonGiaNhap.Text));
 
         }
-
-        private void cbSoPhieuNhapHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbMaMatHang.SelectedIndex != -1)
-                tbSoLuongChuaNhap.Text = Convert.ToString(daopnh.LaySoLuongChuaNhap(cbMaMatHang.Text.ToString(), cbSoPhieuNhapHang.Text.ToString()));
-        }
         private void cbMaMatHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbSoPhieuNhapHang.SelectedIndex != -1)
-                tbSoLuongChuaNhap.Text = Convert.ToString(daopnh.LaySoLuongChuaNhap(cbMaMatHang.Text.ToString(), cbSoPhieuNhapHang.Text.ToString()));
+        {           
+            tbSoLuongChuaNhap.Text = Convert.ToString(daopnh.LaySoLuongChuaNhap(cbMaMatHang.Text.ToString(), tbSoPhieuNhapHang.Text.ToString()));
         }
     }
 }
